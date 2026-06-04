@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Activated Reading Game</title>
+    <style>
+        :root {
+            --bg: #f0f4f8;
+            --card: #ffffff;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --secondary: #0ea5e9;
+            --secondary-hover: #0284c7;
+            --success: #22c55e;
+            --text-dark: #1e293b;
+            --text-light: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg);
+            font-family: system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .game-card {
+            background: var(--card);
+            max-width: 650px;
+            width: 100%;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        h2 { color: var(--primary); margin-bottom: 0.5rem; }
+        .meta { color: var(--text-light); margin-bottom: 2rem; font-size: 0.9rem;}
+
+        .story-display {
+            font-size: 1.5rem;
+            line-height: 2.2;
+            text-align: left;
+            margin-bottom: 2.5rem;
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px dashed #cbd5e1;
+        }
+
+        .word {
+            color: var(--text-dark);
+            margin-right: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .word.read-success {
+            color: var(--success);
+            font-weight: bold;
+            transform: scale(1.05);
+        }
+        .word.current-target {
+            background-color: #fef08a;
+            border-radius: 4px;
+            padding: 0 4px;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            flex: 1;
+            min-width: 180px;
+            max-width: 240px;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-main {
+            background: var(--primary);
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+        }
+        .btn-main:hover { background: var(--primary-hover); }
+
+        .btn-audio {
+            background: var(--secondary);
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+        }
+        .btn-audio:hover { background: var(--secondary-hover); }
+
+        .btn:disabled { background: #cbd5e1; box-shadow: none; cursor: not-allowed; transform: none; }
+
+        .score-board {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--success);
+            display: none;
+            padding: 1rem;
+            background: #dcfce7;
+            border-radius: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<div class="game-card">
+    <h2 id="story-title">English Reading Game</h2>
+    <div class="meta">Category: Practice • Read out loud clearly!</div>
+
+    <div id="story-box" class="story-display"></div>
+
+    <div class="controls">
+        <div class="btn-group">
+            <button id="action-btn" class="btn btn-main">Start Game</button>
+            <button id="pronounce-btn" class="btn btn-audio">🔊 Hear Word</button>
+            <button id="next-btn" class="btn btn-main" style="display: none;">Next Story</button>
+        </div>
+        <div id="scoreboard" class="score-board">🎉 Amazing Job! You completed the reading!</div>
+    </div>
+</div>
+
+<script>
+    const stories = [
+        "Birbal looked at the emperor and smiled softly.",
+        "The quick brown fox jumps over the lazy dog.",
+        "A journey of a thousand miles begins with a single step.",
+        "To be or not to be, that is the question."
+    ];
+
+    let currentStoryIndex = 0;
+    let storyWords = [];
+    let currentWordIndex = 0;
+    let isListening = false;
+
+    const storyBox = document.getElementById('story-box');
+    const actionBtn = document.getElementById('action-btn');
+    const pronounceBtn = document.getElementById('pronounce-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const scoreboard = document.getElementById('scoreboard');
+
+    function loadStory(index) {
+        storyWords = stories[index].split(" ");
+        currentWordIndex = 0;
+        storyBox.innerHTML = storyWords.map((word, i) => {
+            return `<span class="word" id="word-${i}">${word}</span>`;
+        }).join("");
+        updateWordHighlights();
+        scoreboard.style.display = "none";
+        nextBtn.style.display = "none";
+        actionBtn.disabled = false;
+        pronounceBtn.disabled = false;
+        actionBtn.textContent = "Start Game";
+        actionBtn.style.background = "var(--primary)";
+    }
+
+    function updateWordHighlights() {
+        document.querySelectorAll('.word').forEach((el, idx) => {
+            el.classList.remove('current-target');
+            if (idx === currentWordIndex) el.classList.add('current-target');
+        });
+    }
+
+    function cleanWord(word) {
+        return word.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim();
+    }
+
+    // --- Speech Recognition Setup (Listening) ---
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = null;
+
+    if (!SpeechRecognition) {
+        actionBtn.disabled = true;
+        pronounceBtn.disabled = true;
+        storyBox.innerHTML = "<span style='color:red;'>Speech recognition not supported or blocked by browser security headers. Try using Chrome or Edge.</span>";
+    } else {
+        recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = 'en-US';
+
+        actionBtn.addEventListener('click', () => {
+            if (!isListening) {
+                try {
+                    recognition.start();
+                } catch (e) {
+                    console.log("Recognition already started");
+                }
+            } else {
+                recognition.stop();
+            }
+        });
+
+        recognition.onstart = () => {
+            isListening = true;
+            actionBtn.textContent = "Pause Listening";
+            actionBtn.style.background = "#e11d48"; // Turn red when active
+        };
+
+        recognition.onend = () => {
+            isListening = false;
+            if (currentWordIndex < storyWords.length) {
+                actionBtn.textContent = "Resume Game";
+                actionBtn.style.background = "var(--primary)";
+            }
+        };
+
+        recognition.onresult = (event) => {
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                const spokenPhrase = event.results[i][0].transcript;
+                const spokenWordsArray = spokenPhrase.split(" ");
+
+                spokenWordsArray.forEach(spokenWord => {
+                    if (currentWordIndex >= storyWords.length) return;
+
+                    let target = cleanWord(storyWords[currentWordIndex]);
+                    let spoken = cleanWord(spokenWord);
+
+                    if (spoken === target) {
+                        const wordSpan = document.getElementById(`word-${currentWordIndex}`);
+                        wordSpan.classList.add('read-success');
+
+                        currentWordIndex++;
+                        updateWordHighlights();
+                    }
+                });
+            }
+
+            if (currentWordIndex >= storyWords.length) {
+                recognition.stop();
+                actionBtn.textContent = "Game Completed";
+                actionBtn.style.display = "none";
+                pronounceBtn.style.display = "none";
+                nextBtn.style.display = "block";
+                scoreboard.style.display = "block";
+            }
+        };
+    }
+
+    // --- Speech Synthesis Setup (Speaking/Pronunciation) ---
+    pronounceBtn.addEventListener('click', () => {
+        if (currentWordIndex < storyWords.length) {
+            const currentRawWord = storyWords[currentWordIndex];
+            const cleanTargetWord = cleanWord(currentRawWord);
+
+            let physicsPause = false;
+            if (isListening && recognition) {
+                physicsPause = true;
+                recognition.stop();
+            }
+
+            const utterance = new SpeechSynthesisUtterance(cleanTargetWord);
+            utterance.lang = 'en-US';
+
+            utterance.onend = () => {
+                if (physicsPause && recognition) {
+                    setTimeout(() => {
+                        try {
+                            recognition.start();
+                        } catch (e) {}
+                    }, 300);
+                }
+            };
+
+            window.speechSynthesis.speak(utterance);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentStoryIndex = (currentStoryIndex + 1) % stories.length;
+        actionBtn.style.display = "block";
+        pronounceBtn.style.display = "block";
+        loadStory(currentStoryIndex);
+    });
+
+    // Initialize first story
+    loadStory(currentStoryIndex);
+</script>
+
+</body>
+</html>
