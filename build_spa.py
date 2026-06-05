@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+import json
+
+with open('stories.json') as f:
+    stories = json.load(f)
+
+# Read the base UI
+with open('/app/stitch_ui.html', 'r') as f:
+    base_html = f.read()
+
+# We need to construct a robust SPA structure
+# Let's write the entire HTML out since it's going to be substantially different structurally
+
+html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,11 +22,11 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script>
-      tailwind.config = {
+      tailwind.config = {{
         darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
+        theme: {{
+          extend: {{
+            colors: {{
                 "background": "#101419",
                 "on-background": "#e0e2ea",
                 "surface": "#101419",
@@ -31,43 +43,43 @@
                 "outline-variant": "#4e4639",
                 "error-container": "#93000a",
                 "on-error-container": "#ffdad6"
-            },
-            fontFamily: {
+            }},
+            fontFamily: {{
                 "display-lg": ["Playfair Display", "serif"],
                 "headline-lg": ["Playfair Display", "serif"],
                 "body-reading": ["EB Garamond", "serif"],
                 "label-lg": ["Hanken Grotesk", "sans-serif"],
                 "label-md": ["Hanken Grotesk", "sans-serif"]
-            }
-          }
-        }
-      }
+            }}
+          }}
+        }}
+      }}
     </script>
     <style>
-        .paper-grain { position: relative; }
-        .paper-grain::before {
+        .paper-grain {{ position: relative; }}
+        .paper-grain::before {{
             content: ""; position: absolute; inset: 0;
             background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
             opacity: 0.05; pointer-events: none; z-index: 1;
-        }
-        .highlight-gold {
+        }}
+        .highlight-gold {{
             background-color: rgba(197, 160, 89, 0.2);
             border-bottom: 2px solid #e9c176;
             color: #e9c176;
             padding: 0 4px;
             cursor: pointer;
             transition: all 0.3s ease;
-        }
-        .word-spoken { color: #e9c176; transition: color 0.3s ease; }
+        }}
+        .word-spoken {{ color: #e9c176; transition: color 0.3s ease; }}
 
-        .jumble-word {
+        .jumble-word {{
             cursor: pointer; user-select: none;
             transition: transform 0.1s, opacity 0.2s;
-        }
-        .jumble-word:active { transform: scale(0.95); }
+        }}
+        .jumble-word:active {{ transform: scale(0.95); }}
 
         /* Layout hiding */
-        .hidden { display: none !important; }
+        .hidden {{ display: none !important; }}
     </style>
 </head>
 <body class="bg-background text-on-background min-h-screen font-body-reading pb-24">
@@ -199,7 +211,7 @@
     </div>
 
     <script>
-        const stories = [{"title": "The Brahmin's Gift", "text": "Once, there lived a pious Brahmin in a village who used to perform religious rituals. On one occasion, he was rewarded with a cow by a rich man for his service. As the Brahmin started to bring the cow home, three rogues saw him. Being lazy, they wanted to cheat the Brahmin out of his cow and quickly hatched a plan. The first rogue approached the Brahmin and said, 'Are you a washerman that you're pulling a donkey?' The Brahmin was annoyed at being mistaken for a washerman and kept walking. A little later, he was met by the second rogue, who asked him why a Brahmin like him needed to pull a pig. Now confused, the Brahmin pressed on. Some distance later, the third rogue met him and asked why he was pulling a wild animal. Totally confused and terrified, the Brahmin thought the animal was a shape-shifting devil. He ran away, leaving the cow behind. The three tricksters laughed at how easily they had cheated him.", "moral": "Believe your own eyes rather than what you hear.", "image": "https://images.unsplash.com/photo-1548625361-ec853c0dd581?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "translation_sentence": "Once, there lived a pious Brahmin in a village.", "translation_hindi": "\u090f\u0915 \u092c\u093e\u0930, \u090f\u0915 \u0917\u093e\u0901\u0935 \u092e\u0947\u0902 \u090f\u0915 \u092a\u0935\u093f\u0924\u094d\u0930 \u092c\u094d\u0930\u093e\u0939\u094d\u092e\u0923 \u0930\u0939\u0924\u093e \u0925\u093e\u0964", "jumbled_hindi": ["\u090f\u0915", "\u092c\u094d\u0930\u093e\u0939\u094d\u092e\u0923", "\u0930\u0939\u0924\u093e", "\u0925\u093e\u0964", "\u092a\u0935\u093f\u0924\u094d\u0930", "\u0917\u093e\u0901\u0935", "\u092e\u0947\u0902", "\u090f\u0915", "\u092c\u093e\u0930,"]}, {"title": "The Foolish Lion and the Clever Rabbit", "text": "Long ago, a ferocious, greedy lion lived in the forest and started killing all the animals. Seeing this, the animals gathered and approached the lion with an offer: one animal from each species would volunteer to be eaten by him every day. Eventually, it was the rabbits' turn, and they chose a wise old rabbit. The rabbit intentionally took his sweet time reaching the lion. Getting impatient, the lion swore to kill all the animals the next day, but the rabbit finally arrived at sunset. When the enraged lion demanded answers, the calm rabbit explained that it wasn't his fault. He claimed that a group of rabbits had been on their way, but another angry lion attacked them and ate all of them except him. The rabbit added that this other lion was actively challenging the king's supremacy. Enraged, the lion demanded to be taken to his rival. The wise rabbit led him to a deep well filled with water and showed him his own reflection. The furious lion began growling, and seeing his angry reflection growl back, he jumped into the water to attack. He drowned, and the wise rabbit saved the forest.", "moral": "Intelligence wins over might.", "image": "https://images.unsplash.com/photo-1517646458010-ea6ae9279930?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "translation_sentence": "The wise rabbit saved the forest.", "translation_hindi": "\u092c\u0941\u0926\u094d\u0927\u093f\u092e\u093e\u0928 \u0916\u0930\u0917\u094b\u0936 \u0928\u0947 \u091c\u0902\u0917\u0932 \u0915\u094b \u092c\u091a\u093e \u0932\u093f\u092f\u093e\u0964", "jumbled_hindi": ["\u092c\u091a\u093e", "\u0932\u093f\u092f\u093e\u0964", "\u0916\u0930\u0917\u094b\u0936", "\u0928\u0947", "\u091c\u0902\u0917\u0932", "\u0915\u094b", "\u092c\u0941\u0926\u094d\u0927\u093f\u092e\u093e\u0928"]}, {"title": "The Fox Reared by the Lion", "text": "A lion and a lioness lived in a dense forest and in due course gave birth to two cubs. The lion asked the lioness to stay home with the cubs while he hunted. One day, unable to find any large prey, the lion brought home a helpless little fox as a gift. The lioness raised the fox kit with the exact same love as her own cubs, and the three young animals grew up playing together. One day, the young animals encountered an elephant. The lion cubs immediately wanted to fight it, but the frightened fox kid urged them to run away. They all fled back to their mother, and the lion cubs mockingly told her what happened. When the lioness laughed, the fox kid took offense and angrily challenged her for calling him a coward. The lioness replied honestly, 'What's wrong with eating an elephant? You feel like that only because you're not a lion. You are the child of a fox, and your breed never eats elephants. If you cannot be bold, please leave us and live with your own tribe.' Realizing the truth, the fox kid left for the forest.", "moral": "A coward will always remain a coward, even in the company of the brave.", "image": "https://images.unsplash.com/photo-1516934148419-7d88470404e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "translation_sentence": "Realizing the truth, the fox kid left for the forest.", "translation_hindi": "\u0938\u091a\u094d\u091a\u093e\u0908 \u0915\u094b \u0938\u092e\u091d\u0915\u0930, \u0932\u094b\u092e\u0921\u093c\u0940 \u0915\u093e \u092c\u091a\u094d\u091a\u093e \u091c\u0902\u0917\u0932 \u0915\u0947 \u0932\u093f\u090f \u0928\u093f\u0915\u0932 \u0917\u092f\u093e\u0964", "jumbled_hindi": ["\u0938\u092e\u091d\u0915\u0930,", "\u0915\u0947", "\u0938\u091a\u094d\u091a\u093e\u0908", "\u0915\u094b", "\u0932\u094b\u092e\u0921\u093c\u0940", "\u0915\u093e", "\u0928\u093f\u0915\u0932", "\u0917\u092f\u093e\u0964", "\u091c\u0902\u0917\u0932", "\u0932\u093f\u090f", "\u092c\u091a\u094d\u091a\u093e"]}, {"title": "The Monkey and the Crocodile", "text": "Long ago, a monkey named Red-face lived on a sweet apple tree by the seaside. One day, a crocodile named Ugly-mug swam ashore. Red-face threw nectar-like apples to him, and they soon became fast friends, with Ugly-mug returning every day. Ugly-mug also began taking some apples home to his wife. His greedy wife asked where he got such delicious fruit, and upon hearing about the monkey, she demanded to eat the monkey's heart. She reasoned that someone who ate such sweet fruit must have a heart filled with pure nectar. Ugly-mug was angry and refused to deceive his friend, but his wife declared a hunger strike until he complied. Desperate, Ugly-mug invited Red-face to his house for supper, claiming his wife was thrilled to host him. The monkey accepted but wondered how he would cross the sea. Ugly-mug offered to carry him on his back. In the middle of the deep ocean, the guilty crocodile confessed his wife's plan. Thinking quickly, Red-face said, 'Oh dear! Why didn't you tell me earlier? I leave my heart safely stored back on the tree. Let us swim back so I can fetch it for your wife.' The foolish crocodile turned back, and the moment they reached the shore, the terrified monkey scrambled up the tree, never to return.", "moral": "Intelligence wins over might.", "image": "https://images.unsplash.com/photo-1540324155970-143f1f728c7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "translation_sentence": "The foolish crocodile turned back.", "translation_hindi": "\u092e\u0942\u0930\u094d\u0916 \u092e\u0917\u0930\u092e\u091a\u094d\u091b \u0935\u093e\u092a\u0938 \u092e\u0941\u0921\u093c \u0917\u092f\u093e\u0964", "jumbled_hindi": ["\u092e\u0941\u0921\u093c", "\u0917\u092f\u093e\u0964", "\u0935\u093e\u092a\u0938", "\u092e\u0942\u0930\u094d\u0916", "\u092e\u0917\u0930\u092e\u091a\u094d\u091b"]}];
+        const stories = {json.dumps(stories)};
 
         // App State
         let globalScore = parseInt(localStorage.getItem('panchatantra_score')) || 0;
@@ -220,70 +232,70 @@
         // Audio & Speech
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         let recognition = null;
-        if (SpeechRecognition) {
+        if (SpeechRecognition) {{
             recognition = new SpeechRecognition();
             recognition.continuous = true;
             recognition.interimResults = true;
             recognition.lang = 'en-US';
-        }
+        }}
 
         // --- Initialization ---
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {{
             updateGlobalScore();
             showHome();
-        });
+        }});
 
-        function updateGlobalScore(add = 0) {
+        function updateGlobalScore(add = 0) {{
             globalScore += add;
             localStorage.setItem('panchatantra_score', globalScore);
             document.getElementById('global-score').innerText = globalScore.toLocaleString();
-        }
+        }}
 
         // --- Navigation ---
-        function hideAllViews() {
+        function hideAllViews() {{
             document.getElementById('view-home').classList.add('hidden');
             document.getElementById('view-read').classList.add('hidden');
             document.getElementById('view-translate').classList.add('hidden');
             stopListening();
-        }
+        }}
 
-        function showHome() {
+        function showHome() {{
             hideAllViews();
             document.getElementById('view-home').classList.remove('hidden');
             renderLevels();
-        }
+        }}
 
         // --- Home View ---
-        function renderLevels() {
+        function renderLevels() {{
             const grid = document.getElementById('levels-grid');
             grid.innerHTML = '';
 
-            stories.forEach((story, idx) => {
+            stories.forEach((story, idx) => {{
                 const isUnlocked = idx <= unlockedLevel;
                 const card = document.createElement('div');
-                card.className = `relative rounded-xl overflow-hidden border transition-all duration-300 ${isUnlocked ? 'border-outline-variant/30 hover:border-primary/50 cursor-pointer shadow-lg hover:shadow-[0_0_30px_rgba(197,160,89,0.1)] hover:-translate-y-1' : 'border-outline-variant/10 opacity-60 grayscale-[0.8]'}`;
+                card.className = `relative rounded-xl overflow-hidden border transition-all duration-300 ${{isUnlocked ? 'border-outline-variant/30 hover:border-primary/50 cursor-pointer shadow-lg hover:shadow-[0_0_30px_rgba(197,160,89,0.1)] hover:-translate-y-1' : 'border-outline-variant/10 opacity-60 grayscale-[0.8]'}}`;
 
-                if (isUnlocked) {
+                if (isUnlocked) {{
                     card.onclick = () => startReadingMode(idx);
-                }
+                }}
 
                 card.innerHTML = `
                     <div class="h-48 w-full relative">
-                        <img src="${story.image}" class="w-full h-full object-cover">
+                        <img src="${{story.image}}" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
-                        ${!isUnlocked ? '<div class="absolute inset-0 flex items-center justify-center bg-background/50"><span class="material-symbols-outlined text-4xl text-outline">lock</span></div>' : ''}
+                        ${{!isUnlocked ? '<div class="absolute inset-0 flex items-center justify-center bg-background/50"><span class="material-symbols-outlined text-4xl text-outline">lock</span></div>' : ''}}
                     </div>
                     <div class="p-6 bg-surface-container">
-                        <div class="text-xs font-label-lg text-primary mb-2 tracking-widest uppercase">Chapter ${idx + 1}</div>
-                        <h3 class="font-headline-lg text-xl text-on-surface line-clamp-1">${story.title}</h3>
+                        <div class="text-xs font-label-lg text-primary mb-2 tracking-widest uppercase">Chapter ${{idx + 1}}</div>
+                        <h3 class="font-headline-lg text-xl text-on-surface line-clamp-1">${{story.title}}</h3>
                     </div>
                 `;
                 grid.appendChild(card);
-            });
-        }
+            }});
+        }}
 
         // --- Reading Mode ---
-        function startReadingMode(index) {
+        function startReadingMode(index) {{
             currentLevel = index;
             const story = stories[index];
             hideAllViews();
@@ -296,88 +308,88 @@
             const moralBox = document.getElementById('story-moral');
 
             // Clean parsing
-            rawWords = story.text.match(/\S+|\s+/g).filter(w => w.trim().length > 0);
+            rawWords = story.text.match(/\\S+|\\s+/g).filter(w => w.trim().length > 0);
             storyWords = rawWords.map(cleanWord);
             currentWordIndex = 0;
 
-            storyBox.innerHTML = rawWords.map((word, i) => {
-                return `<span class="word inline-block mr-1 my-1" id="word-${i}">${word}</span>`;
-            }).join("");
+            storyBox.innerHTML = rawWords.map((word, i) => {{
+                return `<span class="word inline-block mr-1 my-1" id="word-${{i}}">${{word}}</span>`;
+            }}).join("");
 
-            if (story.moral) {
+            if (story.moral) {{
                 moralBox.innerText = "Moral: " + story.moral;
                 moralBox.classList.remove('hidden');
-            } else {
+            }} else {{
                 moralBox.classList.add('hidden');
-            }
+            }}
 
             document.getElementById('transcript-display').innerText = "...";
             updateReadingUI();
 
             // Setup recognition logic
             setupRecognition();
-        }
+        }}
 
-        function cleanWord(word) {
+        function cleanWord(word) {{
             // Remove all non-alphanumeric chars for matching
             return word.toLowerCase().replace(/[^a-z0-9]/gi, '');
-        }
+        }}
 
-        function updateReadingUI() {
-            document.querySelectorAll('.word').forEach((el, idx) => {
+        function updateReadingUI() {{
+            document.querySelectorAll('.word').forEach((el, idx) => {{
                 el.classList.remove('highlight-gold');
                 // Remove word-spoken if we skipped back (not implemented but good practice)
-                if (idx === currentWordIndex) {
+                if (idx === currentWordIndex) {{
                     el.classList.add('highlight-gold');
                     // Scroll logic with offset for sticky header/footer
                     const rect = el.getBoundingClientRect();
                     const isInView = (rect.top >= 100) && (rect.bottom <= window.innerHeight - 150);
-                    if (!isInView) {
-                        el.scrollIntoView({behavior: 'smooth', block: 'center'});
-                    }
-                }
-            });
-        }
+                    if (!isInView) {{
+                        el.scrollIntoView({{behavior: 'smooth', block: 'center'}});
+                    }}
+                }}
+            }});
+        }}
 
-        function toggleReading() {
+        function toggleReading() {{
             if (!recognition) return alert("Speech recognition not supported in this browser.");
-            if (isListening) {
+            if (isListening) {{
                 stopListening();
-            } else {
+            }} else {{
                 startListening();
-            }
-        }
+            }}
+        }}
 
-        function startListening() {
-            try { recognition.start(); } catch(e) {}
-        }
+        function startListening() {{
+            try {{ recognition.start(); }} catch(e) {{}}
+        }}
 
-        function stopListening() {
-            if (recognition) {
-                try { recognition.stop(); } catch(e) {}
-            }
+        function stopListening() {{
+            if (recognition) {{
+                try {{ recognition.stop(); }} catch(e) {{}}
+            }}
             isListening = false;
             updateRecordBtnUI();
-        }
+        }}
 
-        function updateRecordBtnUI() {
+        function updateRecordBtnUI() {{
             const btn = document.getElementById('btn-read-start');
             const icon = document.getElementById('read-icon');
             const label = document.getElementById('read-label');
-            if (isListening) {
+            if (isListening) {{
                 btn.querySelector('div').classList.add('bg-error-container', 'border-error');
                 icon.classList.add('text-on-error-container');
                 icon.innerText = "mic_off";
                 label.innerText = "Pause";
-            } else {
+            }} else {{
                 btn.querySelector('div').classList.remove('bg-error-container', 'border-error');
                 icon.classList.remove('text-on-error-container');
                 icon.innerText = "mic";
                 label.innerText = "Start";
-            }
-        }
+            }}
+        }}
 
-        function setupRecognition() {
+        function setupRecognition() {{
             if (!recognition) return;
 
             // Remove old listeners to avoid duplicate events on level switch
@@ -386,132 +398,132 @@
             recognition.onresult = null;
             recognition.onerror = null;
 
-            recognition.onstart = () => {
+            recognition.onstart = () => {{
                 isListening = true;
                 updateRecordBtnUI();
-            };
+            }};
 
-            recognition.onend = () => {
+            recognition.onend = () => {{
                 // Auto-restart if we haven't finished and didn't manually stop
-                if (isListening && currentWordIndex < storyWords.length) {
-                    try { recognition.start(); } catch(e) { isListening = false; updateRecordBtnUI(); }
-                } else {
+                if (isListening && currentWordIndex < storyWords.length) {{
+                    try {{ recognition.start(); }} catch(e) {{ isListening = false; updateRecordBtnUI(); }}
+                }} else {{
                     isListening = false;
                     updateRecordBtnUI();
-                }
-            };
+                }}
+            }};
 
-            recognition.onerror = (e) => {
+            recognition.onerror = (e) => {{
                 console.log("Rec error", e.error);
-                if (e.error === 'no-speech') {
+                if (e.error === 'no-speech') {{
                    // Ignore, onend will handle restart if needed
-                } else {
+                }} else {{
                    isListening = false;
                    updateRecordBtnUI();
-                }
-            };
+                }}
+            }};
 
-            recognition.onresult = (event) => {
+            recognition.onresult = (event) => {{
                 let finalTranscript = "";
-                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                for (let i = event.resultIndex; i < event.results.length; ++i) {{
                     const phrase = event.results[i][0].transcript;
                     if(event.results[i].isFinal) finalTranscript += phrase;
 
                     const spokenWords = phrase.split(" ").map(cleanWord).filter(w => w.length > 0);
 
-                    spokenWords.forEach(spoken => {
+                    spokenWords.forEach(spoken => {{
                         if (currentWordIndex >= storyWords.length) return;
 
                         // Skip empty target words (e.g. if original was just punctuation)
-                        while(currentWordIndex < storyWords.length && storyWords[currentWordIndex] === '') {
-                            document.getElementById(`word-${currentWordIndex}`).classList.add('word-spoken');
+                        while(currentWordIndex < storyWords.length && storyWords[currentWordIndex] === '') {{
+                            document.getElementById(`word-${{currentWordIndex}}`).classList.add('word-spoken');
                             currentWordIndex++;
-                        }
+                        }}
 
                         if (currentWordIndex >= storyWords.length) return;
 
                         let target = storyWords[currentWordIndex];
-                        if (spoken === target) {
-                            const wordSpan = document.getElementById(`word-${currentWordIndex}`);
+                        if (spoken === target) {{
+                            const wordSpan = document.getElementById(`word-${{currentWordIndex}}`);
                             wordSpan.classList.add('word-spoken');
                             wordSpan.classList.remove('highlight-gold');
                             currentWordIndex++;
                             updateGlobalScore(10);
                             updateReadingUI();
-                        }
-                    });
-                }
+                        }}
+                    }});
+                }}
 
                 const tDisplay = document.getElementById('transcript-display');
                 tDisplay.innerText = finalTranscript || event.results[event.results.length-1][0].transcript;
 
                 checkReadingComplete();
-            };
-        }
+            }};
+        }}
 
-        function checkReadingComplete() {
-            while(currentWordIndex < storyWords.length && storyWords[currentWordIndex] === '') {
-                document.getElementById(`word-${currentWordIndex}`).classList.add('word-spoken');
+        function checkReadingComplete() {{
+            while(currentWordIndex < storyWords.length && storyWords[currentWordIndex] === '') {{
+                document.getElementById(`word-${{currentWordIndex}}`).classList.add('word-spoken');
                 currentWordIndex++;
-            }
+            }}
 
-            if (currentWordIndex >= storyWords.length) {
+            if (currentWordIndex >= storyWords.length) {{
                 stopListening();
                 showSuccessModal("Reading Completed!", "Well done! You have read the entire story.");
-                if (unlockedLevel === currentLevel) {
+                if (unlockedLevel === currentLevel) {{
                     unlockedLevel++;
                     localStorage.setItem('panchatantra_level', unlockedLevel);
-                }
-            }
-        }
+                }}
+            }}
+        }}
 
-        function hearCurrentWord() {
+        function hearCurrentWord() {{
             const now = Date.now();
-            if (now - lastHearClick < 400) {
+            if (now - lastHearClick < 400) {{
                 // Double click logic - Skip word
-                if (currentWordIndex < storyWords.length) {
-                    const wordSpan = document.getElementById(`word-${currentWordIndex}`);
+                if (currentWordIndex < storyWords.length) {{
+                    const wordSpan = document.getElementById(`word-${{currentWordIndex}}`);
                     wordSpan.classList.add('word-spoken');
                     wordSpan.classList.add('opacity-50'); // visual indicator it was skipped
                     currentWordIndex++;
                     updateReadingUI();
                     checkReadingComplete();
-                }
-            } else {
+                }}
+            }} else {{
                 // Single click - pronounce
-                if (currentWordIndex < storyWords.length) {
+                if (currentWordIndex < storyWords.length) {{
                     // find nearest valid word
                     let tempIdx = currentWordIndex;
                     while(tempIdx < storyWords.length && storyWords[tempIdx] === '') tempIdx++;
 
-                    if(tempIdx < storyWords.length) {
+                    if(tempIdx < storyWords.length) {{
                         const targetRaw = rawWords[tempIdx];
-                        const wordSpan = document.getElementById(`word-${tempIdx}`);
+                        const wordSpan = document.getElementById(`word-${{tempIdx}}`);
 
                         // Visual bump
                         wordSpan.style.transform = "scale(1.2)";
                         setTimeout(()=> wordSpan.style.transform = "scale(1)", 300);
 
                         let physicsPause = false;
-                        if (isListening) {
+                        if (isListening) {{
                             physicsPause = true;
                             stopListening();
-                        }
+                        }}
 
                         const utterance = new SpeechSynthesisUtterance(targetRaw);
                         utterance.lang = 'en-US';
-                        utterance.onend = () => {
+                        utterance.onend = () => {{
                             if (physicsPause) setTimeout(startListening, 300);
-                        };
+                        }};
                         window.speechSynthesis.speak(utterance);
-                    }
-                }
-            }
+                    }}
+                }}
+            }}
             lastHearClick = now;
-        }
+        }}
 
         // --- Translation Mode ---
-        function startTranslationMode() {
+        function startTranslationMode() {{
             stopListening();
             hideAllViews();
             document.getElementById('view-translate').classList.remove('hidden');
@@ -523,59 +535,59 @@
             selectedTransWords = [];
 
             renderTranslationUI();
-        }
+        }}
 
-        function renderTranslationUI() {
+        function renderTranslationUI() {{
             const sourceArea = document.getElementById('trans-source-area');
             const targetArea = document.getElementById('trans-target-area');
 
             sourceArea.innerHTML = '';
             targetArea.innerHTML = '';
 
-            sourceTransWords.forEach((word, idx) => {
+            sourceTransWords.forEach((word, idx) => {{
                 const btn = document.createElement('button');
                 btn.className = 'jumble-word px-4 py-2 bg-surface-container border border-outline/50 rounded-lg font-label-lg text-lg text-on-surface shadow-sm hover:bg-surface-container-high';
                 btn.innerText = word;
                 btn.onclick = () => selectTranslationWord(idx);
                 sourceArea.appendChild(btn);
-            });
+            }});
 
-            selectedTransWords.forEach((wordObj, idx) => {
+            selectedTransWords.forEach((wordObj, idx) => {{
                 const btn = document.createElement('button');
                 btn.className = 'jumble-word px-4 py-2 bg-primary-container border border-primary/50 rounded-lg font-label-lg text-lg text-on-primary-container shadow-md';
                 btn.innerText = wordObj.word;
                 btn.onclick = () => unselectTranslationWord(idx);
                 targetArea.appendChild(btn);
-            });
-        }
+            }});
+        }}
 
-        function selectTranslationWord(idx) {
+        function selectTranslationWord(idx) {{
             const word = sourceTransWords.splice(idx, 1)[0];
-            selectedTransWords.push({word: word, origIdx: idx}); // simplistic tracking
+            selectedTransWords.push({{word: word, origIdx: idx}}); // simplistic tracking
             renderTranslationUI();
-        }
+        }}
 
-        function unselectTranslationWord(idx) {
+        function unselectTranslationWord(idx) {{
             const wordObj = selectedTransWords.splice(idx, 1)[0];
             sourceTransWords.push(wordObj.word);
             renderTranslationUI();
-        }
+        }}
 
-        function resetTranslation() {
+        function resetTranslation() {{
             const story = stories[currentLevel];
             sourceTransWords = [...story.jumbled_hindi];
             selectedTransWords = [];
             renderTranslationUI();
-        }
+        }}
 
-        function checkTranslation() {
+        function checkTranslation() {{
             const story = stories[currentLevel];
             const currentSentence = selectedTransWords.map(w => w.word).join(" ");
 
-            if (currentSentence === story.translation_hindi) {
+            if (currentSentence === story.translation_hindi) {{
                 updateGlobalScore(500);
                 showSuccessModal("Brilliant!", "Translation is perfect. You earned 500 XP!");
-            } else {
+            }} else {{
                 // Error shake
                 const targetArea = document.getElementById('trans-target-area');
                 targetArea.style.transform = 'translateX(-10px)';
@@ -583,26 +595,30 @@
                 setTimeout(()=> targetArea.style.transform = 'translateX(-10px)', 200);
                 setTimeout(()=> targetArea.style.transform = 'translateX(10px)', 300);
                 setTimeout(()=> targetArea.style.transform = 'translateX(0)', 400);
-            }
-        }
+            }}
+        }}
 
         // --- Modals ---
-        function showSuccessModal(title, desc) {
+        function showSuccessModal(title, desc) {{
             document.getElementById('success-title').innerText = title;
             document.getElementById('success-desc').innerText = desc;
             const modal = document.getElementById('success-modal');
             const content = document.getElementById('success-modal-content');
             modal.classList.remove('hidden');
             setTimeout(() => content.classList.remove('scale-95'), 10);
-        }
+        }}
 
-        function closeSuccessModal() {
+        function closeSuccessModal() {{
             const modal = document.getElementById('success-modal');
             const content = document.getElementById('success-modal-content');
             content.classList.add('scale-95');
             setTimeout(() => modal.classList.add('hidden'), 300);
             showHome();
-        }
+        }}
     </script>
 </body>
 </html>
+"""
+
+with open('/app/index.html', 'w') as f:
+    f.write(html_content)
