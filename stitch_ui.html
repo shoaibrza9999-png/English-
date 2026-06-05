@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Panchatantra - Reading Game</title>
+<!-- Google Fonts: Playfair Display (Serif), EB Garamond (Body), Hanken Grotesk (Labels) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#101419",
+                    "secondary-fixed-dim": "#fdb5a0",
+                    "surface-bright": "#36393f",
+                    "inverse-on-surface": "#2d3136",
+                    "inverse-primary": "#775a19",
+                    "surface-container-low": "#181c21",
+                    "on-primary": "#412d00",
+                    "surface-tint": "#e9c176",
+                    "on-primary-container": "#4e3700",
+                    "surface-container-lowest": "#0a0f13",
+                    "tertiary-fixed-dim": "#cbc6ba",
+                    "on-secondary-fixed-variant": "#6b3929",
+                    "surface-container-highest": "#31353b",
+                    "on-background": "#e0e2ea",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#6b3929",
+                    "error-container": "#93000a",
+                    "on-tertiary": "#333028",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "tertiary": "#cbc6ba",
+                    "on-tertiary-fixed": "#1e1c14",
+                    "primary-fixed-dim": "#e9c176",
+                    "tertiary-fixed": "#e8e2d6",
+                    "primary": "#e9c176",
+                    "surface-dim": "#101419",
+                    "inverse-surface": "#e0e2ea",
+                    "on-surface": "#e0e2ea",
+                    "background": "#101419",
+                    "primary-fixed": "#ffdea5",
+                    "on-primary-fixed": "#261900",
+                    "primary-container": "#c5a059",
+                    "surface-container-high": "#262a30",
+                    "tertiary-container": "#aaa59a",
+                    "on-secondary-fixed": "#350f04",
+                    "on-tertiary-fixed-variant": "#4a473e",
+                    "on-error": "#690005",
+                    "secondary": "#fdb5a0",
+                    "on-surface-variant": "#d1c5b4",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#31353b",
+                    "on-secondary-container": "#eaa48f",
+                    "outline": "#9a8f80",
+                    "outline-variant": "#4e4639",
+                    "on-secondary": "#502415",
+                    "surface-container": "#1c2025",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-tertiary-container": "#3e3b33"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "unit": "8px",
+                    "max-width-reading": "680px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-reading": ["EB Garamond"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-sm": ["EB Garamond"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "body-reading": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-sm": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .paper-grain {
+            position: relative;
+        }
+        .paper-grain::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .highlight-gold {
+            background-color: rgba(197, 160, 89, 0.2);
+            border-bottom: 2px solid #e9c176;
+            color: #e9c176;
+            padding: 0 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .highlight-gold:hover {
+            background-color: rgba(197, 160, 89, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-16 bg-surface dark:bg-surface border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary hover:text-primary-fixed-dim transition-colors active:opacity-80">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg text-primary dark:text-primary text-[24px] md:text-headline-lg">The Panchatantra</h1>
+</div>
+<div class="flex items-center">
+<span class="font-label-lg text-label-lg text-primary px-4 py-1 border border-primary/30 rounded-full">1,250 XP</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+<!-- Story Hero Area -->
+<article class="max-w-max-width-reading w-full space-y-12">
+<!-- Book Cover/Visual Anchor -->
+<div class="relative group aspect-[16/9] w-full overflow-hidden rounded-lg border border-outline-variant/20 shadow-lg">
+<img class="w-full h-full object-cover grayscale-[0.3] brightness-75 group-hover:scale-105 transition-transform duration-1000" data-alt="A vintage, weathered book illustration showing a majestic lion in a dense, stylized forest. The scene is rendered in deep mahoganies and gold leaf accents, evoking a dark academia aesthetic. Soft, directional light from an unseen window creates long shadows and highlights the rich paper texture of the background. The mood is ancient and intellectual, suggesting a scene from a forgotten classic fable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3tLJxhcYcJx4tjAVO9ze4wH5Gc9dQ4wCJ09s5-gOz2CSOQKtjsXT_afzryqib-fMHcZIngv2bPA5tHU46fKCGIDaGIraiwo5IIrFUFcPQPA_lhBERyxrPt68U9iZpf7Rsc0mh_V65rL22FqCDfhzT2Y0CZDsbqGrmb0c3lrGxyoaL0IEGprSTKAxHpPAKXuqd-ekyESmqngcPrEAiLqAKMM-4atXMdVy541jPdX7YAG3hXA5BWK3XWdxIVcrwOEjw5Pvv5vDYKtc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+</div>
+<!-- Story Title Section -->
+<header class="text-center space-y-4">
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg text-on-surface">The Lion and the Woodcutter</h2>
+<div class="flex items-center justify-center gap-2 text-outline">
+<div class="h-px w-8 bg-outline/30"></div>
+<span class="font-label-md text-label-md uppercase tracking-widest">Book I: Mitrabheda</span>
+<div class="h-px w-8 bg-outline/30"></div>
+</div>
+</header>
+<!-- Text Content Area -->
+<section class="paper-grain relative bg-surface-container p-8 md:p-12 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="space-y-8 font-body-reading text-body-reading leading-relaxed text-on-surface-variant">
+<p>
+                        In a dense forest far beyond the reach of the bustling kingdoms, there lived a lion of immense strength and <span class="highlight-gold" onclick="playSound('majesty')">majesty</span>. He ruled over the thickets and clearings with a quiet authority that commanded the respect of every creature, from the smallest beetle to the largest elephant.
+                    </p>
+<p>
+                        One afternoon, while the sun filtered through the canopy in long, golden shafts of light, a weary woodcutter stumbled upon the lion’s den. He was not looking for trouble, but for a rare wood that was said to possess a <span class="highlight-gold" onclick="playSound('fragrance')">fragrance</span> so sweet it could calm even the most troubled heart.
+                    </p>
+<p>
+                        The lion watched him from the shadows, his eyes amber like old honey. The woodcutter froze, his axe trembling in his hand. But the beast did not roar. Instead, he stepped forward, the soft padding of his paws nearly silent on the moss-covered earth.
+                    </p>
+</div>
+<!-- Atmospheric Flourish -->
+<div class="mt-12 flex justify-center opacity-20">
+<span class="material-symbols-outlined text-[48px]">ink_pen</span>
+</div>
+</section>
+<!-- Reading Stats / Progress -->
+<footer class="flex justify-between items-center px-4 py-6 border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline">Reading Progress</span>
+<div class="h-1 w-32 bg-surface-container-high mt-2 rounded-full overflow-hidden">
+<div class="h-full w-1/3 bg-primary"></div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-outline">Vocabulary Score</span>
+<div class="font-headline-lg text-primary">+450</div>
+</div>
+</footer>
+</article>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container border-t border-outline-variant/50 rounded-t-full">
+<!-- Start Game -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary-fixed-dim transition-transform active:scale-95 duration-150 group" onclick="navigate('start')">
+<div class="p-2 rounded-full group-[.active]:bg-primary-container group-[.active]:text-on-primary-container">
+<span class="material-symbols-outlined">play_arrow</span>
+</div>
+<span class="font-label-lg text-label-lg">Start Game</span>
+</button>
+<!-- Hear Word (Simulated Active for Demo Context) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 active:scale-95 transition-transform duration-150" onclick="navigate('hear')">
+<span class="material-symbols-outlined">record_voice_over</span>
+<span class="font-label-lg text-label-lg">Hear Word</span>
+</button>
+<!-- Next Story -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary-fixed-dim transition-transform active:scale-95 duration-150 group" onclick="navigate('next')">
+<div class="p-2 rounded-full group-[.active]:bg-primary-container group-[.active]:text-on-primary-container">
+<span class="material-symbols-outlined">skip_next</span>
+</div>
+<span class="font-label-lg text-label-lg">Next Story</span>
+</button>
+</nav>
+<script>
+        function playSound(word) {
+            console.log("Playing pronunciation for: " + word);
+            // Visual feedback for word click
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-24 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-lg shadow-lg z-[100] animate-bounce';
+            notification.innerText = `Speaking: "${word}"`;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => notification.remove(), 500);
+            }, 1500);
+        }
+
+        function navigate(dest) {
+            console.log("Navigating to: " + dest);
+            // Lightweight feedback for navigation
+        }
+
+        // Simple parallax effect for the "paper texture" feel on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const article = document.querySelector('article');
+            if (article) {
+                article.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }
+        });
+    </script>
+</body></html>

@@ -1,309 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voice Activated Reading Game</title>
-    <style>
-        :root {
-            --bg: #f0f4f8;
-            --card: #ffffff;
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
-            --secondary: #0ea5e9;
-            --secondary-hover: #0284c7;
-            --success: #22c55e;
-            --text-dark: #1e293b;
-            --text-light: #94a3b8;
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Panchatantra - Reading Game</title>
+<!-- Google Fonts: Playfair Display (Serif), EB Garamond (Body), Hanken Grotesk (Labels) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#101419",
+                    "secondary-fixed-dim": "#fdb5a0",
+                    "surface-bright": "#36393f",
+                    "inverse-on-surface": "#2d3136",
+                    "inverse-primary": "#775a19",
+                    "surface-container-low": "#181c21",
+                    "on-primary": "#412d00",
+                    "surface-tint": "#e9c176",
+                    "on-primary-container": "#4e3700",
+                    "surface-container-lowest": "#0a0f13",
+                    "tertiary-fixed-dim": "#cbc6ba",
+                    "on-secondary-fixed-variant": "#6b3929",
+                    "surface-container-highest": "#31353b",
+                    "on-background": "#e0e2ea",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#6b3929",
+                    "error-container": "#93000a",
+                    "on-tertiary": "#333028",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "tertiary": "#cbc6ba",
+                    "on-tertiary-fixed": "#1e1c14",
+                    "primary-fixed-dim": "#e9c176",
+                    "tertiary-fixed": "#e8e2d6",
+                    "primary": "#e9c176",
+                    "surface-dim": "#101419",
+                    "inverse-surface": "#e0e2ea",
+                    "on-surface": "#e0e2ea",
+                    "background": "#101419",
+                    "primary-fixed": "#ffdea5",
+                    "on-primary-fixed": "#261900",
+                    "primary-container": "#c5a059",
+                    "surface-container-high": "#262a30",
+                    "tertiary-container": "#aaa59a",
+                    "on-secondary-fixed": "#350f04",
+                    "on-tertiary-fixed-variant": "#4a473e",
+                    "on-error": "#690005",
+                    "secondary": "#fdb5a0",
+                    "on-surface-variant": "#d1c5b4",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#31353b",
+                    "on-secondary-container": "#eaa48f",
+                    "outline": "#9a8f80",
+                    "outline-variant": "#4e4639",
+                    "on-secondary": "#502415",
+                    "surface-container": "#1c2025",
+                    "secondary-fixed": "#ffdbd0",
+                    "on-tertiary-container": "#3e3b33"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "unit": "8px",
+                    "max-width-reading": "680px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "body-reading": ["EB Garamond"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-sm": ["EB Garamond"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "body-reading": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-sm": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .paper-grain {
+            position: relative;
         }
-
-        body {
-            background-color: var(--bg);
-            font-family: system-ui, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 1rem;
+        .paper-grain::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
         }
-
-        .game-card {
-            background: var(--card);
-            max-width: 650px;
-            width: 100%;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            text-align: center;
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-
-        h2 { color: var(--primary); margin-bottom: 0.5rem; }
-        .meta { color: var(--text-light); margin-bottom: 2rem; font-size: 0.9rem;}
-
-        .story-display {
-            font-size: 1.5rem;
-            line-height: 2.2;
-            text-align: left;
-            margin-bottom: 2.5rem;
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 2px dashed #cbd5e1;
-        }
-
-        .word {
-            color: var(--text-dark);
-            margin-right: 8px;
-            display: inline-block;
+        .highlight-gold {
+            background-color: rgba(197, 160, 89, 0.2);
+            border-bottom: 2px solid #e9c176;
+            color: #e9c176;
+            padding: 0 4px;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
-        .word.read-success {
-            color: var(--success);
-            font-weight: bold;
-            transform: scale(1.05);
-        }
-        .word.current-target {
-            background-color: #fef08a;
-            border-radius: 4px;
-            padding: 0 4px;
-        }
-
-        .controls {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            flex: 1;
-            min-width: 180px;
-            max-width: 240px;
-        }
-
-        .btn:active {
-            transform: scale(0.98);
-        }
-
-        .btn-main {
-            background: var(--primary);
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
-        }
-        .btn-main:hover { background: var(--primary-hover); }
-
-        .btn-audio {
-            background: var(--secondary);
-            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
-        }
-        .btn-audio:hover { background: var(--secondary-hover); }
-
-        .btn:disabled { background: #cbd5e1; box-shadow: none; cursor: not-allowed; transform: none; }
-
-        .score-board {
-            margin-top: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--success);
-            display: none;
-            padding: 1rem;
-            background: #dcfce7;
-            border-radius: 10px;
-            width: 100%;
-            box-sizing: border-box;
+        .highlight-gold:hover {
+            background-color: rgba(197, 160, 89, 0.4);
         }
     </style>
-</head>
-<body>
-
-<div class="game-card">
-    <h2 id="story-title">English Reading Game</h2>
-    <div class="meta">Category: Practice • Read out loud clearly!</div>
-
-    <div id="story-box" class="story-display"></div>
-
-    <div class="controls">
-        <div class="btn-group">
-            <button id="action-btn" class="btn btn-main">Start Game</button>
-            <button id="pronounce-btn" class="btn btn-audio">🔊 Hear Word</button>
-            <button id="next-btn" class="btn btn-main" style="display: none;">Next Story</button>
-        </div>
-        <div id="scoreboard" class="score-board">🎉 Amazing Job! You completed the reading!</div>
-    </div>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-16 bg-surface dark:bg-surface border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary hover:text-primary-fixed-dim transition-colors active:opacity-80">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg text-primary dark:text-primary text-[24px] md:text-headline-lg">The Panchatantra</h1>
 </div>
+<div class="flex items-center">
+<span class="font-label-lg text-label-lg text-primary px-4 py-1 border border-primary/30 rounded-full">1,250 XP</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+<!-- Story Hero Area -->
+<article class="max-w-max-width-reading w-full space-y-12">
+<!-- Book Cover/Visual Anchor -->
+<div class="relative group aspect-[16/9] w-full overflow-hidden rounded-lg border border-outline-variant/20 shadow-lg">
+<img class="w-full h-full object-cover grayscale-[0.3] brightness-75 group-hover:scale-105 transition-transform duration-1000" data-alt="A vintage, weathered book illustration showing a majestic lion in a dense, stylized forest. The scene is rendered in deep mahoganies and gold leaf accents, evoking a dark academia aesthetic. Soft, directional light from an unseen window creates long shadows and highlights the rich paper texture of the background. The mood is ancient and intellectual, suggesting a scene from a forgotten classic fable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3tLJxhcYcJx4tjAVO9ze4wH5Gc9dQ4wCJ09s5-gOz2CSOQKtjsXT_afzryqib-fMHcZIngv2bPA5tHU46fKCGIDaGIraiwo5IIrFUFcPQPA_lhBERyxrPt68U9iZpf7Rsc0mh_V65rL22FqCDfhzT2Y0CZDsbqGrmb0c3lrGxyoaL0IEGprSTKAxHpPAKXuqd-ekyESmqngcPrEAiLqAKMM-4atXMdVy541jPdX7YAG3hXA5BWK3XWdxIVcrwOEjw5Pvv5vDYKtc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+</div>
+<!-- Story Title Section -->
+<header class="text-center space-y-4">
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg text-on-surface">The Lion and the Woodcutter</h2>
+<div class="flex items-center justify-center gap-2 text-outline">
+<div class="h-px w-8 bg-outline/30"></div>
+<span class="font-label-md text-label-md uppercase tracking-widest">Book I: Mitrabheda</span>
+<div class="h-px w-8 bg-outline/30"></div>
+</div>
+</header>
+<!-- Text Content Area -->
+<section class="paper-grain relative bg-surface-container p-8 md:p-12 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="space-y-8 font-body-reading text-body-reading leading-relaxed text-on-surface-variant">
+<p>
+                        In a dense forest far beyond the reach of the bustling kingdoms, there lived a lion of immense strength and <span class="highlight-gold" onclick="playSound('majesty')">majesty</span>. He ruled over the thickets and clearings with a quiet authority that commanded the respect of every creature, from the smallest beetle to the largest elephant.
+                    </p>
+<p>
+                        One afternoon, while the sun filtered through the canopy in long, golden shafts of light, a weary woodcutter stumbled upon the lion’s den. He was not looking for trouble, but for a rare wood that was said to possess a <span class="highlight-gold" onclick="playSound('fragrance')">fragrance</span> so sweet it could calm even the most troubled heart.
+                    </p>
+<p>
+                        The lion watched him from the shadows, his eyes amber like old honey. The woodcutter froze, his axe trembling in his hand. But the beast did not roar. Instead, he stepped forward, the soft padding of his paws nearly silent on the moss-covered earth.
+                    </p>
+</div>
+<!-- Atmospheric Flourish -->
+<div class="mt-12 flex justify-center opacity-20">
+<span class="material-symbols-outlined text-[48px]">ink_pen</span>
+</div>
+</section>
+<!-- Reading Stats / Progress -->
+<footer class="flex justify-between items-center px-4 py-6 border-t border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline">Reading Progress</span>
+<div class="h-1 w-32 bg-surface-container-high mt-2 rounded-full overflow-hidden">
+<div class="h-full w-0 bg-primary transition-all duration-300"></div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-outline">Vocabulary Score</span>
+<div class="font-headline-lg text-primary">+450</div>
+</div>
+</footer>
+</article>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container border-t border-outline-variant/50 rounded-t-full">
+<!-- Start Game -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary-fixed-dim transition-transform active:scale-95 duration-150 group" id="btn-start" onclick="toggleGame()">
+<div class="p-2 rounded-full group-[.active]:bg-primary-container group-[.active]:text-on-primary-container">
+<span class="material-symbols-outlined">play_arrow</span>
+</div>
+<span class="font-label-lg text-label-lg">Start Game</span>
+</button>
+<!-- Hear Word (Simulated Active for Demo Context) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 active:scale-95 transition-transform duration-150" onclick="playSound()">
+<span class="material-symbols-outlined">record_voice_over</span>
+<span class="font-label-lg text-label-lg">Hear Word</span>
+</button>
+<!-- Next Story -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary-fixed-dim transition-transform active:scale-95 duration-150 group" onclick="nextStory()">
+<div class="p-2 rounded-full group-[.active]:bg-primary-container group-[.active]:text-on-primary-container">
+<span class="material-symbols-outlined">skip_next</span>
+</div>
+<span class="font-label-lg text-label-lg">Next Story</span>
+</button>
+</nav>
 
-<script>
-    const stories = [
-        "Birbal looked at the emperor and smiled softly.",
-        "The quick brown fox jumps over the lazy dog.",
-        "A journey of a thousand miles begins with a single step.",
-        "To be or not to be, that is the question."
-    ];
+    <script>
+        const stories = [{"title": "", "text": "### 1. The Brahmin's Gift\nOnce, there lived a pious Brahmin in a village who used to perform religious rituals. On one occasion, he was rewarded with a cow by a rich man for his service. As the Brahmin started to bring the cow home, three rogues saw him. Being lazy, they wanted to cheat the Brahmin out of his cow and quickly hatched a plan. The first rogue approached the Brahmin and said, \"Are you a washerman that you're pulling a donkey?\" The Brahmin was annoyed at being mistaken for a washerman and kept walking. A little later, he was met by the second rogue, who asked him why a Brahmin like him needed to pull a pig. Now confused, the Brahmin pressed on. Some distance later, the third rogue met him and asked why he was pulling a wild animal. Totally confused and terrified, the Brahmin thought the animal was a shape-shifting devil. He ran away, leaving the cow behind. The three tricksters laughed at how easily they had cheated him.", "moral": "Believe your own eyes rather than what you hear."}, {"title": "The Foolish Lion and the Clever Rabbit", "text": "Long ago, a ferocious, greedy lion lived in the forest and started killing all the animals. Seeing this, the animals gathered and approached the lion with an offer: one animal from each species would volunteer to be eaten by him every day. Eventually, it was the rabbits' turn, and they chose a wise old rabbit. The rabbit intentionally took his sweet time reaching the lion. Getting impatient, the lion swore to kill all the animals the next day, but the rabbit finally arrived at sunset. When the enraged lion demanded answers, the calm rabbit explained that it wasn't his fault. He claimed that a group of rabbits had been on their way, but another angry lion attacked them and ate all of them except him. The rabbit added that this other lion was actively challenging the king's supremacy. Enraged, the lion demanded to be taken to his rival. The wise rabbit led him to a deep well filled with water and showed him his own reflection. The furious lion began growling, and seeing his angry reflection growl back, he jumped into the water to attack. He drowned, and the wise rabbit saved the forest.", "moral": "Intelligence wins over might."}, {"title": "The Fox Reared by the Lion", "text": "A lion and a lioness lived in a dense forest and in due course gave birth to two cubs. The lion asked the lioness to stay home with the cubs while he hunted. One day, unable to find any large prey, the lion brought home a helpless little fox as a gift. The lioness raised the fox kit with the exact same love as her own cubs, and the three young animals grew up playing together. One day, the young animals encountered an elephant. The lion cubs immediately wanted to fight it, but the frightened fox kid urged them to run away. They all fled back to their mother, and the lion cubs mockingly told her what happened. When the lioness laughed, the fox kid took offense and angrily challenged her for calling him a coward. The lioness replied honestly, \"What's wrong with eating an elephant? You feel like that only because you're not a lion. You are the child of a fox, and your breed never eats elephants. If you cannot be bold, please leave us and live with your own tribe.\" Realizing the truth, the fox kid left for the forest.", "moral": "A coward will always remain a coward, even in the company of the brave."}, {"title": "The Monkey and the Crocodile", "text": "Long ago, a monkey named Red-face lived on a sweet apple tree by the seaside. One day, a crocodile named Ugly-mug swam ashore. Red-face threw nectar-like apples to him, and they soon became fast friends, with Ugly-mug returning every day. Ugly-mug also began taking some apples home to his wife. His greedy wife asked where he got such delicious fruit, and upon hearing about the monkey, she demanded to eat the monkey's heart. She reasoned that someone who ate such sweet fruit must have a heart filled with pure nectar. Ugly-mug was angry and refused to deceive his friend, but his wife declared a hunger strike until he complied. Desperate, Ugly-mug invited Red-face to his house for supper, claiming his wife was thrilled to host him. The monkey accepted but wondered how he would cross the sea. Ugly-mug offered to carry him on his back. In the middle of the deep ocean, the guilty crocodile confessed his wife's plan. Thinking quickly, Red-face said, \"Oh dear! Why didn't you tell me earlier? I leave my heart safely stored back on the tree. Let us swim back so I can fetch it for your wife.\" The foolish crocodile turned back, and the moment they reached the shore, the terrified monkey scrambled up the tree, never to return. He scolded the crocodile for betraying their friendship. Ashamed, Ugly-mug asked how he could make amends, especially since a huge rival crocodile had now occupied his home. The monkey advised him to fight the intruder to win back his home and his wife's respect. The crocodile followed the advice and lived happily once more.", "moral": "Intelligence wins over might."}, {"title": "The Moon Lake", "text": "A large herd of elephants lived happily under the care of a majestic king until a severe drought hit the jungle. To save them from dying of thirst, the king sent elephants in all directions to find water. One elephant discovered a massive lake in a distant jungle, and the king ordered the herd to march there. Unfortunately, right next to the beautiful lake was a colony of rabbits. As the heavy elephants marched through, thousands of rabbits were trampled to death or severely injured. In a panic, the rabbit king called an urgent meeting. A brave little rabbit stood up and volunteered to go as a messenger to the elephant king. Finding the elephant king surrounded by his herd, the rabbit wisely climbed a huge rock to avoid being crushed and shouted, \"O King of elephants, hear me! I am a messenger from the mighty Moon.\" He warned the king, \"The Moon says you have soiled his holy lake and killed his protected rabbits. If you do not stop, something terrible will happen to your herd.\" Shocked and deeply superstitious, the elephant king asked how to beg for forgiveness. The rabbit led the king alone to the edge of the lake at night and showed him the Moon's reflection in the still water. When the elephant dipped his trunk into the water to bow in worship, the ripples made the reflection dance. \"Look! The Moon is angrier than ever because you touched his holy waters,\" whispered the rabbit. The terrified elephant king bowed his head, promised never to return or harm the rabbits again, and led his herd away forever.", "moral": "Intelligence wins over might."}, {"title": "The Sparrow and the Elephant", "text": "A sparrow couple lived happily in a nest they built on a tree branch where they had laid their eggs. One morning, a wild elephant gripped by spring fever rampaged through the area and aggressively snapped the branch supporting the nest. The eggs were completely destroyed, leaving the mother sparrow heartbroken. Seeing her grief, her friend the woodpecker offered comfort and promised a plan to destroy the elephant. The woodpecker enlisted a black fly, who in turn brought in a counselor frog. Together, they devised a brilliant scheme. At noon, the black fly began buzzing sweet music directly into the elephant\u2019s ears. Charmed, the elephant closed his eyes to listen. Instantly, the woodpecker flew down and pecked out the elephant's eyes, blinding him. Thirsty and in pain, the elephant stumbled through the forest searching for water. The frog sat at the edge of a massive, deep pit and croaked loudly. Misled into thinking the croaking meant a fresh pond was nearby, the elephant charged forward, tumbled into the pit, and died.", "moral": "Collective wit and teamwork can overcome massive strength."}, {"title": "The Sage's Daughter", "text": "A childless sage lived with his wife on the banks of a river. One day, while the sage was praying in the water, an eagle flying overhead accidentally dropped a tiny female mouse right into his hands. He brought the mouse home, and he and his wife used his mystical powers to transform the creature into a human baby girl. They raised her as their own daughter, and she grew into a beautiful maiden. When she turned sixteen, the sage sought the most powerful groom in the universe for her and called upon the Sun God. However, the daughter rejected him, saying, \"He is far too hot, and I will be reduced to ashes.\" The Sun God suggested the Lord of the Clouds, who can easily block the sun's rays. When the Cloud God appeared, the girl rejected him too, citing his dark appearance and terrifying thunder. The Cloud God suggested the Wind God, who easily blows clouds away. The girl rejected the Wind God because he was restless and always on the move. The Wind God pointed to the Mountain Lord, who stands rock-solid against the wind. Yet, the daughter rejected the mountain, calling him cold-hearted, and requested someone softer but stronger. Finally, the Mountain Lord suggested a mouse, as mice are soft yet easily chew holes straight through mountains. Hearing this, the daughter happily agreed. The sage smiled at the work of destiny, turned her back into a mouse, and happily wed her to her match.", "moral": "Destiny cannot be changed."}, {"title": "The Blue Jackal", "text": "A hungry jackal wandered into a city looking for food and ended up being chased by a pack of aggressive dogs. In his desperation to hide, he ducked into a dyer's house and fell directly into a large vat of indigo dye, staining his fur bright blue from head to toe. When he returned to the forest, the animals were terrified because they couldn't identify what kind of creature he was. Seising the opportunity, the jackal proclaimed, \"I am a fierce creature sent directly by Indra, the King of Gods, to guard this forest!\" The gullible animals believed him. The blue jackal established a grand court, appointing the lion as his prime minister, the tiger as his bedroom guardian, and the elephant as his doorkeeper. He promptly banished all other jackals from the forest so no one would recognize him. He lived a life of supreme luxury while the other animals hunted and brought him food. One evening, a pack of wild jackals passed nearby, howling loudly. Unable to suppress his natural instincts, the blue jackal joined in and howled at the top of his voice. Realizing they had been fooled by an ordinary jackal, the enraged animals killed him instantly.", "moral": "You cannot hide your true nature for long."}, {"title": "The Mongoose and the Farmer's Wife", "text": "A farmer and his wife had a newborn son. Wanting a companion and protector for the baby, they decided to adopt a young mongoose as a pet. A few months later, the couple needed to leave the house briefly. Believing the mongoose would watch over the baby, they left them alone together. The farmer's wife returned home first and was horrified to find the mongoose waiting at the door with its mouth heavily stained with fresh blood. Assuming the animal had killed her infant, she flew into a blind rage and threw a heavy box directly at the mongoose, severely injuring it. She rushed into the nursery, only to find her baby sleeping peacefully next to a dead, torn snake. Realizing the mongoose had actually saved her son's life, she ran outside, but it was too late\u2014the loyal animal had died from the blow. She wept bitterly over her hasty actions.", "moral": "Do not act in haste; think carefully before you strike."}, {"title": "The Greedy Jackal", "text": "A lazy jackal was wandering through the hills one day when he stumbled upon a grim scene: a dead hunter, a dead wild boar, and a bow lying on the ground. The hunter had shot the boar with an arrow, but the wounded boar had killed the hunter before collapsing and dying from its injuries. The jackal rejoiced at finding an enormous amount of food that would last him for weeks. However, his excessive greed got the better of him. He decided to preserve the meat and eat the tightly strung bowstring first. The moment he bit into the taut string, it snapped violently, causing the sharp wooden end of the bow to pierce right through his mouth, killing him instantly.", "moral": "Excessive greed always brings its own ruin."}, {"title": "The Daydreaming Priest", "text": "A deeply lazy and impoverished priest survived entirely by begging for alms, all while constantly dreaming of becoming incredibly wealthy. One morning, he received a generous pot of milk. He took it home, boiled it, drank a little, and added a small amount of curd to set the rest into curd overnight. As he lay down to sleep, his mind began to race with wild daydreams about the pot. He imagined: *\"By morning, the milk will turn to curd. I will churn it into rich butter, heat it into ghee, and sell it at the market. With that money, I\u2019ll buy a hen. The hen will lay eggs, leading to an entire poultry farm. Then I\u2019ll trade the poultry for cows, open a massive dairy, and sell milk to the entire town. I\u2019ll buy precious jewels, sell them to the king, and become so rich that I can marry a beautiful girl from a wealthy family. We will have a handsome son, and if he plays any mischief, I will get furious and beat him with a big stick like this!\"* Lost entirely in his fantasy, his arm involuntarily grabbed a real stick resting next to his bed. He swung it hard, hitting the hanging pot. The pot shattered completely, spilling the milk everywhere and instantly waking him to reality.", "moral": "There is no substitute for hard work; dreams cannot be fulfilled without action."}, {"title": "The Heron and the Crab", "text": "An old, lazy heron lived near a pond and grew tired of fishing for his food. He devised a trick, standing by the water with a deeply sorrowful expression. A wise crab, who often helped the fish, noticed him and asked what was wrong. The heron sighed, \"Alas! I overheard some fishermen saying they are going to cast nets and catch every single fish in this pond. I am heartbroken. However, I know of a beautiful, hidden lake far away where you would all be perfectly safe. If the fish want, I can carry a few of them in my beak every day to relocate them.\" Terrified, the fish eagerly volunteered. Every day, the heron loaded a few fish into his beak, flew over to a large flat rock, ate them, and left their bones scattered across the stone. Eventually, the crab asked for a turn to be relocated. As they flew near the rock, the crab looked down and saw the massive pile of fish bones. Realizing the heron\u2019s deadly trap, the crab quickly clamped his sharp claws tightly around the heron's neck and snapped his head clean off. The crab crawled back to the pond and exposed the heron's lies to the remaining fish.", "moral": "Greed and deceit ultimately destroy the perpetrator."}, {"title": "The Crows and the Serpent", "text": "A crow couple built a beautiful nest at the top of a tree, but a wicked black serpent lived in a hollow burrow at the bottom of the same tree. Every time the female crow laid eggs, the serpent crawled up the trunk and ate them, leaving the couple heartbroken. Desperate for a solution, the crows approached their clever friend, the jackal, for advice. The jackal instructed them, \"Go to the royal palace, steal a highly valuable item belonging to the queen, and drop it directly into the snake's burrow.\" The crow flew to the palace gardens and snatched a costly necklace while the queen was bathing. The royal guards immediately chased the bird. The crow flew back to the tree and dropped the glittering necklace straight into the serpent\u2019s burrow right in front of the guards. When the guards dug into the burrow to retrieve the treasure, the serpent emerged hissed aggressively. The guards killed the snake on the spot, recovered the necklace, and left the crow family to live in peace.", "moral": "Intelligence wins over might."}, {"title": "The Gold-Giving Serpent", "text": "A poor Brahmin worked tirelessly on his fields, but his crops never yielded any profit. One hot afternoon, he noticed a large anthill on his land and saw a majestic serpent emerging from it. Thinking he had neglected the guardian deity of his land, he brought a plate of milk and offered it to the anthill. The next morning, when he went to retrieve the plate, he was astonished to find a bright gold coin resting on it. From that day on, the Brahmin offered milk daily and received a gold coin every morning. One day, the Brahmin had to travel to the city, so he instructed his son to feed the serpent. The greedy son thought, *\"This anthill must be completely filled with thousands of gold coins! Why should I wait every day?\"* He took a heavy stick and struck the serpent on the head. The injured snake survived the blow, bit the boy in self-defense, and the boy died instantly.", "moral": "Excess greed only leads to total loss."}, {"title": "The Swan and the Owl", "text": "A elegant swan spent his days playing around a beautiful lake. One day, an owl visited him, flattered him with praises, and requested to be his friend. The swan agreed, and they spent many happy days together by the lakeside. Soon, the owl grew bored of the lake and said, \"I am returning to my home in the Lotus Wood. If you ever wish to visit me, come find me there.\" Eventually, the swan traveled to the Lotus Wood, but because it was daytime, the owl was hiding inside a dark tree hollow. The owl called out, telling the swan to rest until the sun set, as he could only come out at night. The next morning, while the swan was resting on a branch, a caravan of merchants passed through the woods. The merchants began chanting hymns, and the owl inside the tree gave a loud, ill-timed hoot. Believing the hooting was a terrible omen, one of the merchants drew an arrow to shoot down the bird. Sensing danger, the owl quickly retreated deeper into his hole, but the innocent swan didn't move in time. The arrow struck the swan, killing him.", "moral": "True friendship should be formed between equals who share the same lifestyle."}, {"title": "The Cat, the Partridge, and the Hare", "text": "A partridge lived comfortably in a dwelling at the foot of a tree. One day, it traveled to distant fields to feast on crops and stayed away for several weeks. In its absence, a hare stumbled upon the empty spot and moved in. When the plump partridge finally returned, it demanded its home back. A fierce argument ensued, with the hare arguing that property belongs to whoever currently occupies it, while the partridge claimed ancestral ownership. They decided to find a mediator and approached a cat living nearby who was known for posing as a deeply religious ascetic. Seeing them approach from a distance, the hypocritical cat put on a holy act and whispered weakly, \"Alas, old age has made me partially deaf. Step closer, dear friends, and speak directly into my ear so I can judge your case fairly.\" Foolish and trusting, both the hare and the partridge stepped right up to the cat's face. The moment they were within reach, the cat struck, killed them both, and turned them into his meal.", "moral": "When two people fight blindly, an unscrupulous mediator walks away with the prize."}, {"title": "The Geese and the Tortoise", "text": "A pair of geese and a tortoise were inseparable friends who lived by a beautiful lake. A severe drought struck the region, and their lake began drying up rapidly. The geese decided they must fly to a distant, water-filled lake, but the tortoise couldn't fly. The geese came up with a creative plan: \"We will hold a strong stick on either end with our beaks, and you must grip the center of the stick tightly with your mouth. However, you must promise to keep your mouth completely shut, no matter what, or you will fall to your death.\" The tortoise agreed. As they flew over a town, the townsfolk looked up, laughed, and cheered at the sight of geese carrying a tortoise. Unable to control his anger and anxiety, the tortoise opened his mouth to shout, \"What are they laughing about?!\" The moment he let go of the stick, he plummeted to the ground and died.", "moral": "Always listen to wise counsel and know when to stay silent."}, {"title": "The Bird with the Two Necks", "text": "Long ago, there lived a strange, mythical bird that possessed two distinct necks and heads but shared one single stomach. One day, the first head discovered a jar of delicious, sweet nectar and began drinking it happily. The second head watched longingly and begged, \"Please let me taste a few drops of that nectar as well.\" The first head selfishly refused, saying, \"Why does it matter? It all goes down into our common stomach anyway.\" Deeply insulted and furious, the second head began searching the forest floor. It soon discovered a jar of deadly poison and intentionally swallowed it down. The poison flowed directly into the shared stomach, and both heads perished together.", "moral": "A lack of sharing and cooperation within a single unit leads to mutual destruction."}, {"title": "The Three Fishes", "text": "Three large fishes who were close friends lived in a lake, but they possessed vastly different personalities. The first fish was a fatalist who believed everything was governed by destiny and couldn't be changed. The second fish was clever and highly resourceful, confident he could think his way out of any problem. The third fish was wise, preferring to think long and hard to avoid danger entirely. One evening, the wise fish overheard fishermen standing at the shore saying, \"Look at those giant fish! This lake is packed with them. Let's return tomorrow morning with our nets.\" The wise fish hurried back to his friends and urged, \"We must swim through the canal immediately and escape to the connected lake before morning.\" The clever fish scoffed, \"I will stay; if they catch me, I\u2019ll find a trick to escape.\" The fatalist fish sighed, \"Whatever is meant to happen will happen. I was born here, and I won't leave.\" The wise fish didn't want to risk his life and swam through the canal alone that night. The next morning, the fishermen cast their nets and caught the remaining two friends. The clever fish immediately went completely limp, holding his breath to pretend he was dead. The fishermen carelessly threw him back into the water along with the day's debris, allowing him to escape. However, the fatalist fish kept thrashing wildly in the net, so the fishermen struck him down.", "moral": "Forethought and timely action are better than relying blindly on luck or reacting at the last minute."}];
 
-    let currentStoryIndex = 0;
-    let storyWords = [];
-    let currentWordIndex = 0;
-    let isListening = false;
+        let currentStoryIndex = 0;
+        let storyWords = [];
+        let currentWordIndex = 0;
+        let isListening = false;
 
-    const storyBox = document.getElementById('story-box');
-    const actionBtn = document.getElementById('action-btn');
-    const pronounceBtn = document.getElementById('pronounce-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const scoreboard = document.getElementById('scoreboard');
-
-    function loadStory(index) {
-        storyWords = stories[index].split(" ");
-        currentWordIndex = 0;
-        storyBox.innerHTML = storyWords.map((word, i) => {
-            return `<span class="word" id="word-${i}">${word}</span>`;
-        }).join("");
-        updateWordHighlights();
-        scoreboard.style.display = "none";
-        nextBtn.style.display = "none";
-        actionBtn.disabled = false;
-        pronounceBtn.disabled = false;
-        actionBtn.textContent = "Start Game";
-        actionBtn.style.background = "var(--primary)";
-    }
-
-    function updateWordHighlights() {
-        document.querySelectorAll('.word').forEach((el, idx) => {
-            el.classList.remove('current-target');
-            if (idx === currentWordIndex) el.classList.add('current-target');
+        // Setup references
+        document.addEventListener("DOMContentLoaded", () => {
+            loadStory(0);
         });
-    }
 
-    function cleanWord(word) {
-        return word.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim();
-    }
+        function loadStory(index) {
+            const story = stories[index];
+            document.querySelector('h2').innerText = story.title;
 
-    // --- Speech Recognition Setup (Listening) ---
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    let recognition = null;
+            // Generate the text block
+            const storyBox = document.querySelector('.space-y-8');
+            storyBox.innerHTML = ''; // clear
 
-    if (!SpeechRecognition) {
-        actionBtn.disabled = true;
-        pronounceBtn.disabled = true;
-        storyBox.innerHTML = "<span style='color:red;'>Speech recognition not supported or blocked by browser security headers. Try using Chrome or Edge.</span>";
-    } else {
-        recognition = new SpeechRecognition();
-        recognition.continuous = true;
-        recognition.interimResults = true;
-        recognition.lang = 'en-US';
+            const p = document.createElement('p');
+            storyWords = story.text.split(' ');
+            currentWordIndex = 0;
 
-        actionBtn.addEventListener('click', () => {
-            if (!isListening) {
-                try {
-                    recognition.start();
-                } catch (e) {
-                    console.log("Recognition already started");
+            storyBox.innerHTML = storyWords.map((word, i) => {
+                return `<span class="word" id="word-${i}">${word}</span> `;
+            }).join("");
+
+            if (story.moral) {
+               const m = document.createElement('p');
+               m.className = "mt-4 font-bold text-primary";
+               m.innerText = "Moral: " + story.moral;
+               storyBox.appendChild(m);
+            }
+
+            updateWordHighlights();
+
+            // Reset UI
+            const scoreDisplay = document.querySelector('.text-right .font-headline-lg');
+            scoreDisplay.innerText = '+0';
+
+            const progressBar = document.querySelector('.w-1\\/3');
+            if (progressBar) progressBar.style.width = '0%';
+
+            const startBtn = document.getElementById('btn-start');
+            startBtn.querySelector('span:last-child').innerText = 'Start Game';
+
+            if (recognition) {
+                try { recognition.stop(); } catch(e){}
+                isListening = false;
+            }
+        }
+
+        function updateWordHighlights() {
+            document.querySelectorAll('.word').forEach((el, idx) => {
+                el.classList.remove('highlight-gold');
+                if (idx === currentWordIndex) {
+                    el.classList.add('highlight-gold');
+                    // Scroll into view if needed
+                    // el.scrollIntoView({behavior: "smooth", block: "center"});
                 }
-            } else {
-                recognition.stop();
-            }
-        });
+            });
+        }
 
-        recognition.onstart = () => {
-            isListening = true;
-            actionBtn.textContent = "Pause Listening";
-            actionBtn.style.background = "#e11d48"; // Turn red when active
-        };
+        function cleanWord(word) {
+            return word.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").trim();
+        }
 
-        recognition.onend = () => {
-            isListening = false;
+        function playSound() {
             if (currentWordIndex < storyWords.length) {
-                actionBtn.textContent = "Resume Game";
-                actionBtn.style.background = "var(--primary)";
-            }
-        };
+                const word = cleanWord(storyWords[currentWordIndex]);
+                const notification = document.createElement('div');
+                notification.className = 'fixed bottom-24 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-lg shadow-lg z-[100] animate-bounce';
+                notification.innerText = `Speaking: "${word}"`;
+                document.body.appendChild(notification);
 
-        recognition.onresult = (event) => {
-            for (let i = event.resultIndex; i < event.results.length; ++i) {
-                const spokenPhrase = event.results[i][0].transcript;
-                const spokenWordsArray = spokenPhrase.split(" ");
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    notification.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => notification.remove(), 500);
+                }, 1500);
 
-                spokenWordsArray.forEach(spokenWord => {
-                    if (currentWordIndex >= storyWords.length) return;
+                let physicsPause = false;
+                if (isListening && recognition) {
+                    physicsPause = true;
+                    recognition.stop();
+                }
 
-                    let target = cleanWord(storyWords[currentWordIndex]);
-                    let spoken = cleanWord(spokenWord);
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'en-US';
 
-                    if (spoken === target) {
-                        const wordSpan = document.getElementById(`word-${currentWordIndex}`);
-                        wordSpan.classList.add('read-success');
-
-                        currentWordIndex++;
-                        updateWordHighlights();
+                utterance.onend = () => {
+                    if (physicsPause && recognition) {
+                        setTimeout(() => {
+                            try { recognition.start(); } catch (e) {}
+                        }, 300);
                     }
-                });
+                };
+
+                window.speechSynthesis.speak(utterance);
             }
+        }
 
-            if (currentWordIndex >= storyWords.length) {
-                recognition.stop();
-                actionBtn.textContent = "Game Completed";
-                actionBtn.style.display = "none";
-                pronounceBtn.style.display = "none";
-                nextBtn.style.display = "block";
-                scoreboard.style.display = "block";
-            }
-        };
-    }
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        let recognition = null;
 
-    // --- Speech Synthesis Setup (Speaking/Pronunciation) ---
-    pronounceBtn.addEventListener('click', () => {
-        if (currentWordIndex < storyWords.length) {
-            const currentRawWord = storyWords[currentWordIndex];
-            const cleanTargetWord = cleanWord(currentRawWord);
+        if (SpeechRecognition) {
+            recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = true;
+            recognition.lang = 'en-US';
 
-            let physicsPause = false;
-            if (isListening && recognition) {
-                physicsPause = true;
-                recognition.stop();
-            }
+            recognition.onstart = () => {
+                isListening = true;
+                const startBtn = document.getElementById('btn-start');
+                startBtn.querySelector('span:last-child').innerText = 'Pause';
+                startBtn.querySelector('.p-2').classList.add('bg-error-container', 'text-on-error-container');
+            };
 
-            const utterance = new SpeechSynthesisUtterance(cleanTargetWord);
-            utterance.lang = 'en-US';
-
-            utterance.onend = () => {
-                if (physicsPause && recognition) {
-                    setTimeout(() => {
-                        try {
-                            recognition.start();
-                        } catch (e) {}
-                    }, 300);
+            recognition.onend = () => {
+                isListening = false;
+                if (currentWordIndex < storyWords.length) {
+                    const startBtn = document.getElementById('btn-start');
+                    startBtn.querySelector('span:last-child').innerText = 'Resume';
+                    startBtn.querySelector('.p-2').classList.remove('bg-error-container', 'text-on-error-container');
                 }
             };
 
-            window.speechSynthesis.speak(utterance);
+            recognition.onresult = (event) => {
+                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                    const spokenPhrase = event.results[i][0].transcript;
+                    const spokenWordsArray = spokenPhrase.split(" ");
+
+                    spokenWordsArray.forEach(spokenWord => {
+                        if (currentWordIndex >= storyWords.length) return;
+
+                        let target = cleanWord(storyWords[currentWordIndex]);
+                        let spoken = cleanWord(spokenWord);
+
+                        if (spoken === target) {
+                            const wordSpan = document.getElementById(`word-${currentWordIndex}`);
+                            wordSpan.classList.add('text-secondary');
+
+                            currentWordIndex++;
+                            updateWordHighlights();
+
+                            // update progress
+                            const progressBar = document.querySelector('.bg-primary');
+                            if (progressBar) {
+                                progressBar.style.width = `${(currentWordIndex / storyWords.length) * 100}%`;
+                            }
+                            const scoreDisplay = document.querySelector('.text-right .font-headline-lg');
+                            if (scoreDisplay) scoreDisplay.innerText = `+${currentWordIndex * 10}`;
+                        }
+                    });
+                }
+
+                if (currentWordIndex >= storyWords.length) {
+                    recognition.stop();
+                    const startBtn = document.getElementById('btn-start');
+                    startBtn.querySelector('span:last-child').innerText = 'Completed!';
+                }
+            };
         }
-    });
 
-    nextBtn.addEventListener('click', () => {
-        currentStoryIndex = (currentStoryIndex + 1) % stories.length;
-        actionBtn.style.display = "block";
-        pronounceBtn.style.display = "block";
-        loadStory(currentStoryIndex);
-    });
+        function toggleGame() {
+            if (!recognition) return;
+            if (!isListening) {
+                try { recognition.start(); } catch(e) {}
+            } else {
+                recognition.stop();
+            }
+        }
 
-    // Initialize first story
-    loadStory(currentStoryIndex);
+        function nextStory() {
+            currentStoryIndex = (currentStoryIndex + 1) % stories.length;
+            loadStory(currentStoryIndex);
+        }
 </script>
-
-</body>
-</html>
+</body></html>
