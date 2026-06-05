@@ -153,8 +153,14 @@
                 <h3 id="trans-eng-text" class="font-headline-lg text-2xl md:text-3xl text-on-surface leading-normal text-center p-6 bg-surface-container rounded-xl border border-outline-variant/20 shadow-md"></h3>
             </header>
 
-            <div class="space-y-6">
+            <div class="space-y-6 relative">
                 <p class="font-label-lg text-outline text-center">Tap words to arrange them in Hindi:</p>
+
+                <div id="btn-show-answer-container" class="absolute right-0 top-0 hidden">
+                    <button onclick="solveTranslation()" class="px-4 py-1 text-sm bg-error-container text-on-error-container rounded-full font-label-lg hover:brightness-110 active:scale-95 transition-all">
+                        Show Answer
+                    </button>
+                </div>
 
                 <!-- Target Area -->
                 <div id="trans-target-area" class="flex flex-wrap justify-center gap-3 p-6 min-h-[100px] border-2 border-dashed border-outline-variant/30 rounded-xl bg-surface-container/50">
@@ -211,6 +217,7 @@
         let currentSentenceIndex = 0;
         let selectedTransWords = [];
         let sourceTransWords = [];
+        let failedTranslationAttempts = 0;
 
         // Audio & Speech
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -258,6 +265,17 @@
                 const card = document.createElement('div');
                 card.className = `relative rounded-xl overflow-hidden border transition-all duration-300 flex flex-col ${isUnlocked ? 'border-outline-variant/30 hover:border-primary/50 shadow-lg' : 'border-outline-variant/10 opacity-60 grayscale-[0.8]'}`;
 
+                // Fetch saved progress for translation
+                const savedSentenceIndex = parseInt(localStorage.getItem(`panchatantra_trans_prog_${idx}`)) || 0;
+                let transLabel = "Translate";
+                if (savedSentenceIndex > 0) {
+                    if (savedSentenceIndex >= story.sentences.length) {
+                        transLabel = "Translation Complete";
+                    } else {
+                        transLabel = `Translate (Resuming ${(savedSentenceIndex+1)}/${story.sentences.length})`;
+                    }
+                }
+
                 card.innerHTML = `
                     <div class="h-48 w-full relative">
                         <img src="${story.image}" class="w-full h-full object-cover">
@@ -268,9 +286,9 @@
                         <div class="text-xs font-label-lg text-primary mb-2 tracking-widest uppercase">Chapter ${idx + 1}</div>
                         <h3 class="font-headline-lg text-xl text-on-surface line-clamp-2 mb-4">${story.title}</h3>
 
-                        <div class="mt-auto grid grid-cols-2 gap-2">
+                        <div class="mt-auto flex flex-col gap-2">
                             <button ${!isUnlocked ? 'disabled' : ''} onclick="startReadingMode(${idx})" class="px-2 py-2 bg-surface-container-high border border-outline-variant rounded text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors disabled:opacity-50">Read</button>
-                            <button ${!isUnlocked ? 'disabled' : ''} onclick="startTranslationMode(${idx})" class="px-2 py-2 bg-surface-container-high border border-outline-variant rounded text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors disabled:opacity-50">Translate</button>
+                            <button ${!isUnlocked ? 'disabled' : ''} onclick="startTranslationMode(${idx})" class="px-2 py-2 bg-surface-container-high border border-outline-variant rounded text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors disabled:opacity-50 text-xs text-center">${transLabel}</button>
                         </div>
                     </div>
                 `;
@@ -451,18 +469,34 @@
         // --- Translation Mode ---
         function startTranslationMode(index) {
             currentStoryIndex = index;
-            currentSentenceIndex = 0;
             activeMode = 'trans';
             hideAllViews();
             document.getElementById('view-translate').classList.remove('hidden');
 
             document.getElementById('trans-story-title').innerText = stories[index].title;
+
+            // Check for saved progress
+            const savedSentenceIndex = parseInt(localStorage.getItem(`panchatantra_trans_prog_${index}`)) || 0;
+            const story = stories[index];
+
+            if (savedSentenceIndex >= story.sentences.length) {
+                showSuccessModal("Already Completed", "You have already translated this entire story!");
+                // we'll still start them at the beginning if they want to replay, or we could just reset
+                currentSentenceIndex = 0;
+                localStorage.setItem(`panchatantra_trans_prog_${index}`, 0);
+            } else {
+                currentSentenceIndex = savedSentenceIndex;
+            }
+
             loadSentenceUI();
         }
 
         function loadSentenceUI() {
             const story = stories[currentStoryIndex];
             const sentence = story.sentences[currentSentenceIndex];
+
+            failedTranslationAttempts = 0;
+            document.getElementById('btn-show-answer-container').classList.add('hidden');
 
             document.getElementById('trans-progress').innerText = `Sentence ${currentSentenceIndex + 1} / ${story.sentences.length}`;
             document.getElementById('trans-eng-text').innerText = sentence.english;
@@ -516,13 +550,33 @@
             loadSentenceUI();
         }
 
-        function checkTranslation() {
+        function solveTranslation() {
+            const story = stories[currentStoryIndex];
+            const sentence = story.sentences[currentSentenceIndex];
+
+            // Clear current arrays
+            selectedTransWords = [];
+            sourceTransWords = [];
+
+            // Push correct words into target array
+            const correctWords = sentence.hindi.split(" ");
+            correctWords.forEach((w, idx) => {
+                selectedTransWords.push({word: w, origIdx: idx});
+            });
+
+            renderTranslationUI();
+            checkTranslation(true); // pass true to indicate it was auto-solved
+        }
+
+        function checkTranslation(autoSolved = false) {
             const story = stories[currentStoryIndex];
             const sentence = story.sentences[currentSentenceIndex];
             const currentStr = selectedTransWords.map(w => w.word).join(" ");
 
             if (currentStr === sentence.hindi) {
-                updateGlobalScore(50);
+                if (!autoSolved) {
+                    updateGlobalScore(50);
+                }
 
                 // Show Analysis
                 const analysisBox = document.getElementById('trans-analysis');
@@ -530,6 +584,9 @@
                     analysisBox.innerHTML = `<strong>Grammar Insight:</strong><br>${sentence.analysis}`;
                     analysisBox.classList.remove('hidden');
                 }
+
+                // Save progress
+                localStorage.setItem(`panchatantra_trans_prog_${currentStoryIndex}`, currentSentenceIndex + 1);
 
                 setTimeout(() => {
                     currentSentenceIndex++;
@@ -545,6 +602,11 @@
                 }, sentence.analysis ? 3000 : 1000);
 
             } else {
+                failedTranslationAttempts++;
+                if (failedTranslationAttempts >= 10) {
+                    document.getElementById('btn-show-answer-container').classList.remove('hidden');
+                }
+
                 const targetArea = document.getElementById('trans-target-area');
                 targetArea.style.transform = 'translateX(-10px)';
                 setTimeout(()=> targetArea.style.transform = 'translateX(10px)', 100);
