@@ -67,6 +67,33 @@
         .jumble-word:active { transform: scale(0.95); }
 
         .hidden { display: none !important; }
+
+        .pulsating-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ffb4ab;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(255, 180, 171, 1);
+            transform: scale(1);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 180, 171, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 180, 171, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 180, 171, 0); }
+        }
+
+        .hint-btn {
+            background: linear-gradient(135deg, #c5a059 0%, #775a19 100%);
+            color: #101419;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+            border: 1px solid #e9c176;
+        }
+        .hint-btn:hover {
+            background: linear-gradient(135deg, #e9c176 0%, #c5a059 100%);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
+        }
     </style>
 </head>
 <body class="bg-background text-on-background min-h-screen font-body-reading pb-24">
@@ -117,8 +144,11 @@
             </section>
 
             <div class="bg-surface-container-high p-4 rounded-lg border border-outline-variant/20 text-center sticky bottom-[100px] z-40">
-                <p class="text-sm text-outline mb-1 font-label-md uppercase tracking-widest">Live Transcript</p>
-                <p id="transcript-display" class="text-lg text-on-surface min-h-[1.5rem] italic">Waiting for voice...</p>
+                <div class="flex items-center justify-center gap-2 mb-1">
+                    <span id="listening-indicator" class="pulsating-dot hidden"></span>
+                    <p class="text-sm text-outline font-label-md uppercase tracking-widest">Live Transcript</p>
+                </div>
+                <p id="transcript-display" class="text-lg text-on-surface min-h-[1.5rem] italic">Waiting to start...</p>
             </div>
         </article>
 
@@ -156,8 +186,11 @@
             <div class="space-y-6 relative">
                 <p class="font-label-lg text-outline text-center">Tap words to arrange them in Hindi:</p>
 
-                <div id="btn-show-answer-container" class="absolute right-0 top-0 hidden">
-                    <button onclick="solveTranslation()" class="px-4 py-1 text-sm bg-error-container text-on-error-container rounded-full font-label-lg hover:brightness-110 active:scale-95 transition-all">
+                <div class="absolute right-0 top-0 flex gap-2">
+                    <button id="btn-hint" onclick="hintTranslation()" class="hint-btn px-4 py-1 flex items-center gap-1 rounded-full font-label-lg transition-all active:scale-95">
+                        <span class="material-symbols-outlined text-sm">lightbulb</span> Hint
+                    </button>
+                    <button id="btn-show-answer-container" onclick="solveTranslation()" class="hidden px-4 py-1 text-sm bg-error-container text-on-error-container rounded-full font-label-lg hover:brightness-110 active:scale-95 transition-all">
                         Show Answer
                     </button>
                 </div>
@@ -167,7 +200,7 @@
                 </div>
 
                 <!-- Source Area -->
-                <div id="trans-source-area" class="flex flex-wrap justify-center gap-3 p-4">
+                <div id="trans-source-area" class="flex flex-wrap justify-center gap-3 p-4 min-h-[100px]">
                 </div>
             </div>
 
@@ -218,6 +251,8 @@
         let selectedTransWords = [];
         let sourceTransWords = [];
         let failedTranslationAttempts = 0;
+        let wasAutoSolved = false;
+        let wasHintUsed = false;
 
         // Audio & Speech
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -320,7 +355,8 @@
                 return `<span class="word inline-block mr-1 my-1" id="word-${i}">${word}</span>`;
             }).join("");
 
-            document.getElementById('transcript-display').innerText = "Waiting for voice...";
+            document.getElementById('transcript-display').innerText = "Waiting to start...";
+            document.getElementById('listening-indicator').classList.add('hidden');
             updateReadingUI();
             setupRecognition();
         }
@@ -360,17 +396,22 @@
             const btn = document.getElementById('btn-read-start');
             const icon = document.getElementById('read-icon');
             const label = document.getElementById('read-label');
+            const indicator = document.getElementById('listening-indicator');
+            const tDisplay = document.getElementById('transcript-display');
             if(!btn) return;
             if (isListening) {
                 btn.querySelector('div').classList.add('bg-error-container', 'border-error');
                 icon.classList.add('text-on-error-container');
                 icon.innerText = "mic_off";
                 label.innerText = "Pause";
+                indicator.classList.remove('hidden');
+                if(tDisplay.innerText === "Waiting to start...") tDisplay.innerText = "Listening...";
             } else {
                 btn.querySelector('div').classList.remove('bg-error-container', 'border-error');
                 icon.classList.remove('text-on-error-container');
                 icon.innerText = "mic";
                 label.innerText = "Start";
+                indicator.classList.add('hidden');
             }
         }
 
@@ -481,7 +522,6 @@
 
             if (savedSentenceIndex >= story.sentences.length) {
                 showSuccessModal("Already Completed", "You have already translated this entire story!");
-                // we'll still start them at the beginning if they want to replay, or we could just reset
                 currentSentenceIndex = 0;
                 localStorage.setItem(`panchatantra_trans_prog_${index}`, 0);
             } else {
@@ -496,6 +536,8 @@
             const sentence = story.sentences[currentSentenceIndex];
 
             failedTranslationAttempts = 0;
+            wasAutoSolved = false;
+            wasHintUsed = false;
             document.getElementById('btn-show-answer-container').classList.add('hidden');
 
             document.getElementById('trans-progress').innerText = `Sentence ${currentSentenceIndex + 1} / ${story.sentences.length}`;
@@ -550,7 +592,48 @@
             loadSentenceUI();
         }
 
+        function hintTranslation() {
+            wasHintUsed = true;
+            const story = stories[currentStoryIndex];
+            const sentence = story.sentences[currentSentenceIndex];
+            const correctWords = sentence.hindi.split(" ");
+
+            // Find the first incorrect word in selected array
+            let firstWrongIdx = -1;
+            for (let i = 0; i < selectedTransWords.length; i++) {
+                if (selectedTransWords[i].word !== correctWords[i]) {
+                    firstWrongIdx = i;
+                    break;
+                }
+            }
+
+            // If the selected ones are all correct so far, the next step is just placing the next right word
+            if (firstWrongIdx === -1) {
+                firstWrongIdx = selectedTransWords.length;
+            }
+
+            if (firstWrongIdx < correctWords.length) {
+                const neededWord = correctWords[firstWrongIdx];
+
+                // Pop everything from firstWrongIdx onwards back to source
+                while (selectedTransWords.length > firstWrongIdx) {
+                    const w = selectedTransWords.pop();
+                    sourceTransWords.push(w.word);
+                }
+
+                // Find neededWord in source and select it
+                const sourceIdx = sourceTransWords.indexOf(neededWord);
+                if (sourceIdx !== -1) {
+                    const word = sourceTransWords.splice(sourceIdx, 1)[0];
+                    selectedTransWords.push({word: word, origIdx: sourceIdx});
+                }
+            }
+
+            renderTranslationUI();
+        }
+
         function solveTranslation() {
+            wasAutoSolved = true;
             const story = stories[currentStoryIndex];
             const sentence = story.sentences[currentSentenceIndex];
 
@@ -565,17 +648,22 @@
             });
 
             renderTranslationUI();
-            checkTranslation(true); // pass true to indicate it was auto-solved
+            // We DO NOT automatically advance. The user must click "Check Sentence" to acknowledge it.
         }
 
-        function checkTranslation(autoSolved = false) {
+        function checkTranslation() {
             const story = stories[currentStoryIndex];
             const sentence = story.sentences[currentSentenceIndex];
             const currentStr = selectedTransWords.map(w => w.word).join(" ");
 
             if (currentStr === sentence.hindi) {
-                if (!autoSolved) {
-                    updateGlobalScore(50);
+                // Only award full XP if not auto-solved
+                if (!wasAutoSolved) {
+                    if (wasHintUsed) {
+                        updateGlobalScore(25); // half xp for hints
+                    } else {
+                        updateGlobalScore(50); // full xp
+                    }
                 }
 
                 // Show Analysis
