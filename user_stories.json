@@ -1,0 +1,945 @@
+{
+  "stories": [
+    {
+      "id": 1,
+      "title": "The Brahmin's Gift",
+      "moral": "Believe your own eyes rather than what you hear.",
+      "sentences": [
+        {
+          "english": "Once, there lived a pious Brahmin in a village who used to perform religious rituals.",
+          "hindi": "एक बार, एक गाँव में एक पवित्र ब्राह्मण रहता था जो धार्मिक अनुष्ठान करता था।"
+        },
+        {
+          "english": "On one occasion, he was rewarded with a cow by a rich man for his service.",
+          "hindi": "एक अवसर पर, उन्हें उनकी सेवा के लिए एक अमीर आदमी द्वारा एक गाय उपहार में दी गई थी।"
+        },
+        {
+          "english": "As the Brahmin started to bring the cow home, three rogues saw him.",
+          "hindi": "जैसे ही ब्राह्मण ने गाय को घर लाना शुरू किया, तीन बदमाशों ने उसे देखा।"
+        },
+        {
+          "english": "Being lazy, they wanted to cheat the Brahmin out of his cow and quickly hatched a plan.",
+          "hindi": "आलसी होने के कारण, वे ब्राह्मण को उसकी गाय से ठगना चाहते थे और उन्होंने जल्दी से एक योजना बनाई।"
+        },
+        {
+          "english": "The first rogue approached the Brahmin and said, \"Are you a washerman that you're pulling a donkey?\"",
+          "hindi": "पहले बदमाश ने ब्राह्मण के पास जाकर कहा, \"क्या तुम धोबी हो कि तुम गधे को खींच रहे हो?\""
+        },
+        {
+          "english": "The Brahmin was annoyed at being mistaken for a washerman and kept walking.",
+          "hindi": "धोबी समझे जाने पर ब्राह्मण क्रोधित हो गया और चलता रहा।"
+        },
+        {
+          "english": "A little later, he was met by the second rogue, who asked him why a Brahmin like him needed to pull a pig.",
+          "hindi": "थोड़ी देर बाद, उसे दूसरा बदमाश मिला, जिसने उससे पूछा कि उसके जैसे ब्राह्मण को सूअर खींचने की क्या आवश्यकता थी।"
+        },
+        {
+          "english": "Now confused, the Brahmin pressed on.",
+          "hindi": "अब भ्रमित होकर, ब्राह्मण आगे बढ़ता गया।"
+        },
+        {
+          "english": "Some distance later, the third rogue met him and asked why he was pulling a wild animal.",
+          "hindi": "कुछ दूरी के बाद, तीसरा बदमाश उससे मिला और पूछा कि वह एक जंगली जानवर को क्यों खींच रहा था।"
+        },
+        {
+          "english": "Totally confused and terrified, the Brahmin thought the animal was a shape-shifting devil.",
+          "hindi": "पूरी तरह से भ्रमित और भयभीत होकर, ब्राह्मण ने सोचा कि वह जानवर एक रूप बदलने वाला राक्षस था।"
+        },
+        {
+          "english": "He ran away, leaving the cow behind.",
+          "hindi": "वह गाय को पीछे छोड़कर भाग गया।"
+        },
+        {
+          "english": "The three tricksters laughed at how easily they had cheated him.",
+          "hindi": "तीनों धूर्त इस बात पर हँसे कि उन्होंने उसे कितनी आसानी से ठग लिया था।"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The Foolish Lion and the Clever Rabbit",
+      "moral": "Intelligence wins over might.",
+      "sentences": [
+        {
+          "english": "Long ago, a ferocious, greedy lion lived in the forest and started killing all the animals.",
+          "hindi": "बहुत समय पहले, जंगल में एक क्रूर और लालची शेर रहता था और उसने सभी जानवरों को मारना शुरू कर दिया था।"
+        },
+        {
+          "english": "Seeing this, the animals gathered and approached the lion with an offer: one animal from each species would volunteer to be eaten by him every day.",
+          "hindi": "यह देखकर, जानवर एकत्र हुए और एक प्रस्ताव के साथ शेर के पास पहुंचे: प्रत्येक प्रजाति से एक जानवर हर दिन उसके द्वारा खाए जाने के लिए स्वेच्छा से जाएगा।"
+        },
+        {
+          "english": "Eventually, it was the rabbits' turn, and they chose a wise old rabbit.",
+          "hindi": "अंततः, खरगोशों की बारी आई, और उन्होंने एक बुद्धिमान बूढ़े खरगोश को चुना।"
+        },
+        {
+          "english": "The rabbit intentionally took his sweet time reaching the lion.",
+          "hindi": "खरगोश ने जानबूझकर शेर के पास पहुँचने में काफी समय लगाया।"
+        },
+        {
+          "english": "Getting impatient, the lion swore to kill all the animals the next day, but the rabbit finally arrived at sunset.",
+          "hindi": "अधीर होकर, शेर ने अगले दिन सभी जानवरों को मार डालने की कसम खाई, लेकिन खरगोश आखिरकार सूर्यास्त के समय पहुँचा।"
+        },
+        {
+          "english": "When the enraged lion demanded answers, the calm rabbit explained that it wasn't his fault.",
+          "hindi": "जब क्रोधित शेर ने जवाब माँगा, तो शांत खरगोश ने स्पष्ट किया कि यह उसकी गलती नहीं थी।"
+        },
+        {
+          "english": "He claimed that a group of rabbits had been on their way, but another angry lion attacked them and ate all of them except him.",
+          "hindi": "उसने दावा किया कि खरगोशों का एक समूह अपने रास्ते पर था, लेकिन एक अन्य क्रोधित शेर ने उन पर हमला कर दिया और उसके अलावा उन सभी को खा गया।"
+        },
+        {
+          "english": "The rabbit added that this other lion was actively challenging the king's supremacy.",
+          "hindi": "खरगोश ने आगे कहा कि यह दूसरा शेर सक्रिय रूप से राजा की संप्रभुता को चुनौती दे रहा था।"
+        },
+        {
+          "english": "Enraged, the lion demanded to be taken to his rival.",
+          "hindi": "क्रोधित होकर, शेर ने अपने प्रतिद्वंद्वी के पास ले जाने की मांग की।"
+        },
+        {
+          "english": "The wise rabbit led him to a deep well filled with water and showed him his own reflection.",
+          "hindi": "बुद्धिमान खरगोश उसे पानी से भरे एक गहरे कुएँ पर ले गया और उसे उसकी अपनी परछाई दिखाई।"
+        },
+        {
+          "english": "The furious lion began growling, and seeing his angry reflection growl back, he jumped into the water to attack.",
+          "hindi": "क्रोधित शेर दहाड़ने लगा, और अपनी गुस्से से भरी परछाई को वापस दहाड़ते हुए देखकर, उसने हमला करने के लिए पानी में छलांग लगा दी।"
+        },
+        {
+          "english": "He drowned, and the wise rabbit saved the forest.",
+          "hindi": "वह डूब गया, और बुद्धिमान खरगोश ने जंगल को बचा लिया।"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Fox Reared by the Lion",
+      "moral": "A coward will always remain a coward, even in the company of the brave.",
+      "sentences": [
+        {
+          "english": "A lion and a lioness lived in a dense forest and in due course gave birth to two cubs.",
+          "hindi": "एक शेर और एक शेरनी एक घने जंगल में रहते थे और नियत समय में उन्होंने दो शावकों को जन्म दिया।"
+        },
+        {
+          "english": "The lion asked the lioness to stay home with the cubs while he hunted.",
+          "hindi": "शेर ने शेरनी से शावकों के साथ घर पर रहने के लिए कहा जब वह शिकार करता था।"
+        },
+        {
+          "english": "One day, unable to find any large prey, the lion brought home a helpless little fox as a gift.",
+          "hindi": "एक दिन, कोई बड़ा शिकार ढूंढने में असमर्थ होने पर, शेर एक असहाय छोटे सियार को उपहार के रूप में घर ले आया।"
+        },
+        {
+          "english": "The lioness raised the fox kit with the exact same love as her own cubs, and the three young animals grew up playing together.",
+          "hindi": "शेरनी ने लोमड़ी के बच्चे का पालन-पोषण बिल्कुल अपने शावकों की तरह ही प्यार से किया, और तीनों युवा जानवर एक साथ खेलते हुए बड़े हुए।"
+        },
+        {
+          "english": "One day, the young animals encountered an elephant.",
+          "hindi": "एक दिन, युवा जानवरों का सामना एक हाथी से हुआ।"
+        },
+        {
+          "english": "The lion cubs immediately wanted to fight it, but the frightened fox kid urged them to run away.",
+          "hindi": "शेर के बच्चे तुरंत उससे लड़ना चाहते थे, लेकिन डरे हुए सियार के बच्चे ने उनसे भाग जाने का आग्रह किया।"
+        },
+        {
+          "english": "They all fled back to their mother, and the lion cubs mockingly told her what happened.",
+          "hindi": "वे सभी अपनी माँ के पास वापस भाग गए, और शेर के बच्चों ने मज़ाक उड़ाते हुए उसे बताया कि क्या हुआ था।"
+        },
+        {
+          "english": "When the lioness laughed, the fox kid took offense and angrily challenged her for calling him a coward.",
+          "hindi": "जब शेरनी हँसी, तो सियार के बच्चे को बुरा लगा और उसने उसे डरपोक कहने के लिए गुस्से में चुनौती दी।"
+        },
+        {
+          "english": "The lioness replied honestly, \"What's wrong with eating an elephant? You feel like that only because you're not a lion. You are the child of a fox, and your breed never eats elephants. If you cannot be bold, please leave us and live with your own tribe.\"",
+          "hindi": "शेरनी ने ईमानदारी से उत्तर दिया, \"हाथी को खाने में क्या गलत है? तुम ऐसा केवल इसलिए महसूस करते हो क्योंकि तुम शेर नहीं हो। तुम एक सियार के बच्चे हो, और तुम्हारी नस्ल कभी हाथी नहीं खाती। यदि तुम साहसी नहीं बन सकते, तो कृपया हमें छोड़ दो और अपने कबीले के साथ रहो।\""
+        },
+        {
+          "english": "Realizing the truth, the fox kid left for the forest.",
+          "hindi": "सच्चाई का एहसास होने पर, सियार का बच्चा जंगल की ओर चला गया।"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Monkey and the Crocodile",
+      "moral": "Intelligence wins over might.",
+      "sentences": [
+        {
+          "english": "Long ago, a monkey named Red-face lived on a sweet apple tree by the seaside.",
+          "hindi": "बहुत समय पहले, लाल-मुँह नामक एक बंदर समुद्र के किनारे एक मीठे सेब के पेड़ पर रहता था।"
+        },
+        {
+          "english": "One day, a crocodile named Ugly-mug swam ashore.",
+          "hindi": "एक दिन, कुरुप-मुँह नामक एक मगरमच्छ तैरकर किनारे पर आ गया।"
+        },
+        {
+          "english": "Red-face threw nectar-like apples to him, and they soon became fast friends, with Ugly-mug returning every day.",
+          "hindi": "लाल-मुँह ने उसकी ओर अमृत जैसे सेब फेंके, और वे जल्द ही घनिष्ठ मित्र बन गए, जिसके बाद कुरुप-मुँह हर दिन आने लगा।"
+        },
+        {
+          "english": "Ugly-mug also began taking some apples home to his wife.",
+          "hindi": "कुरुप-मुँह अपनी पत्नी के लिए घर पर कुछ सेब भी ले जाने लगा।"
+        },
+        {
+          "english": "His greedy wife asked where he got such delicious fruit, and upon hearing about the monkey, she demanded to eat the monkey's heart.",
+          "hindi": "उसकी लालची पत्नी ने पूछा कि उसे इतने स्वादिष्ट फल कहाँ से मिले, और बंदर के बारे में सुनकर, उसने बंदर का दिल खाने की माँग की।"
+        },
+        {
+          "english": "She reasoned that someone who ate such sweet fruit must have a heart filled with pure nectar.",
+          "hindi": "उसने तर्क दिया कि जो व्यक्ति इतने मीठे फल खाता है उसका दिल निश्चित रूप से शुद्ध अमृत से भरा होना चाहिए।"
+        },
+        {
+          "english": "Ugly-mug was angry and refused to deceive his friend, but his wife declared a hunger strike until he complied.",
+          "hindi": "कुरुप-मुँह क्रोधित था और उसने अपने मित्र को धोखा देने से इनकार कर दिया, लेकिन उसकी पत्नी ने तब तक भूख हड़ताल की घोषणा कर दी जब तक कि वह सहमत नहीं हो गया।"
+        },
+        {
+          "english": "Desperate, Ugly-mug invited Red-face to his house for supper, claiming his wife was thrilled to host him.",
+          "hindi": "हताश होकर, कुरुप-मुँह ने लाल-मुँह को अपने घर रात के खाने पर आमंत्रित किया, यह दावा करते हुए कि उसकी पत्नी उसकी मेजबानी करने के लिए रोमांचित थी।"
+        },
+        {
+          "english": "The monkey accepted but wondered how he would cross the sea.",
+          "hindi": "बंदर ने निमंत्रण स्वीकार कर लिया लेकिन आश्चर्यचकित हुआ कि वह समुद्र कैसे पार करेगा।"
+        },
+        {
+          "english": "Ugly-mug offered to carry him on his back.",
+          "hindi": "कुरुप-मुँह ने उसे अपनी पीठ पर बिठाकर ले जाने की पेशकश की।"
+        },
+        {
+          "english": "In the middle of the deep ocean, the guilty crocodile confessed his wife's plan.",
+          "hindi": "गहरे समुद्र के बीच में, दोषी मगरमच्छ ने अपनी पत्नी की योजना स्वीकार कर ली।"
+        },
+        {
+          "english": "Thinking quickly, Red-face said, \"Oh dear! Why didn't you tell me earlier? I leave my heart safely stored back on the tree. Let us swim back so I can fetch it for your wife.\"",
+          "hindi": "तेजी से सोचते हुए, लाल-मुँह ने कहा, \"ओह प्रिय! तुमने मुझे पहले क्यों नहीं बताया? मैं अपना दिल पेड़ पर सुरक्षित रख आया हूँ। आइए वापस तैरें ताकि मैं इसे तुम्हारी पत्नी के लिए ले आ सकूँ।\""
+        },
+        {
+          "english": "The foolish crocodile turned back, and the moment they reached the shore, the terrified monkey scrambled up the tree, never to return.",
+          "hindi": "मूर्ख मगरमच्छ पीछे मुड़ गया, और जैसे ही वे किनारे पर पहुँचे, भयभीत बंदर कभी वापस न लौटने के लिए पेड़ पर चढ़ गया।"
+        },
+        {
+          "english": "He scolded the crocodile for betraying their friendship.",
+          "hindi": "उसने अपनी दोस्ती को धोखा देने के लिए मगरमच्छ को डांटा।"
+        },
+        {
+          "english": "Ashamed, Ugly-mug asked how he could make amends, especially since a huge rival crocodile had now occupied his home.",
+          "hindi": "शर्मिंदा होकर, कुरुप-मुँह ने पूछा कि वह कैसे हर्जाना दे सकता है, विशेष रूप से जब एक विशाल प्रतिद्वंद्वी मगरमच्छ ने उसके घर पर कब्जा कर लिया था।"
+        },
+        {
+          "english": "The monkey advised him to fight the intruder to win back his home and his wife's respect.",
+          "hindi": "बंदर ने उसे अपने घर और अपनी पत्नी के सम्मान को वापस पाने के लिए घुसपैठिये से लड़ने की सलाह दी।"
+        },
+        {
+          "english": "The crocodile followed the advice and lived happily once more.",
+          "hindi": "मगरमच्छ ने सलाह का पालन किया और एक बार फिर खुशी से रहने लगा।"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "The Moon Lake",
+      "moral": "Intelligence wins over might.",
+      "sentences": [
+        {
+          "english": "A large herd of elephants lived happily under the care of a majestic king until a severe drought hit the jungle.",
+          "hindi": "हाथियों का एक बड़ा झुंड एक प्रतापी राजा की देखरेख में खुशी-खुशी रहता था जब तक कि जंगल में भीषण सूखा नहीं पड़ गया।"
+        },
+        {
+          "english": "To save them from dying of thirst, the king sent elephants in all directions to find water.",
+          "hindi": "उन्हें प्यास से मरने से बचाने के लिए, राजा ने पानी खोजने के लिए हाथियों को सभी दिशाओं में भेजा।"
+        },
+        {
+          "english": "One elephant discovered a massive lake in a distant jungle, and the king ordered the herd to march there.",
+          "hindi": "एक हाथी ने एक दूर के जंगल में एक विशाल झील की खोज की, और राजा ने झुंड को वहाँ जाने का आदेश दिया।"
+        },
+        {
+          "english": "Unfortunately, right next to the beautiful lake was a colony of rabbits.",
+          "hindi": "दुर्भाग्य से, उस सुंदर झील के ठीक बगल में खरगोशों की एक बस्ती थी।"
+        },
+        {
+          "english": "As the heavy elephants marched through, thousands of rabbits were trampled to death or severely injured.",
+          "hindi": "जैसे ही भारी हाथी वहाँ से गुजरे, हजारों खरगोश पैरों तले कुचलकर मर गए या गंभीर रूप से घायल हो गए।"
+        },
+        {
+          "english": "In a panic, the rabbit king called an urgent meeting.",
+          "hindi": "घबराहट में, खरगोशों के राजा ने एक आपातकालीन बैठक बुलाई।"
+        },
+        {
+          "english": "A brave little rabbit stood up and volunteered to go as a messenger to the elephant king.",
+          "hindi": "एक बहादुर छोटा खरगोश खड़ा हुआ और उसने हाथी राजा के पास दूत के रूप में जाने की स्वेच्छा व्यक्त की।"
+        },
+        {
+          "english": "Finding the elephant king surrounded by his herd, the rabbit wisely climbed a huge rock to avoid being crushed and shouted, \"O King of elephants, hear me! I am a messenger from the mighty Moon.\"",
+          "hindi": "हाथी राजा को अपने झुंड से घिरा हुआ पाकर, खरगोश बुद्धिमानी से कुचले जाने से बचने के लिए एक विशाल चट्टान पर चढ़ गया और चिल्लाया, \"हे हाथियों के राजा, मेरी बात सुनो! मैं शक्तिशाली चंद्रमा का दूत हूँ।\""
+        },
+        {
+          "english": "He warned the king, \"The Moon says you have soiled his holy lake and killed his protected rabbits. If you do not stop, something terrible will happen to your herd.\"",
+          "hindi": "उसने राजा को चेतावनी दी, \"चंद्रमा कहता है कि तुमने उसकी पवित्र झील को गंदा कर दिया है और उसके संरक्षित खरगोशों को मार डाला है। यदि तुम नहीं रुके, तो तुम्हारे झुंड के साथ कुछ भयानक घटित होगा।\""
+        },
+        {
+          "english": "Shocked and deeply superstitious, the elephant king asked how to beg for forgiveness.",
+          "hindi": "स्तब्ध और गहरे अंधविश्वासी होकर, हाथी राजा ने पूछा कि क्षमा कैसे मांगी जाए।"
+        },
+        {
+          "english": "The rabbit led the king alone to the edge of the lake at night and showed him the Moon's reflection in the still water.",
+          "hindi": "खरगोश रात में राजा को अकेला झील के किनारे ले गया और उसे शांत पानी में चंद्रमा का प्रतिबिंब दिखाया।"
+        },
+        {
+          "english": "When the elephant dipped his trunk into the water to bow in worship, the ripples made the reflection dance.",
+          "hindi": "जब हाथी ने पूजा में झुकने के लिए अपनी सूंड पानी में डुबोई, तो तरंगों ने प्रतिबिंब को नचा दिया।"
+        },
+        {
+          "english": "\"Look! The Moon is angrier than ever because you touched his holy waters,\" whispered the rabbit.",
+          "hindi": "\"देखो! चंद्रमा पहले से कहीं अधिक क्रोधित है क्योंकि तुमने उसके पवित्र जल को छुआ है,\" खरगोश ने फुसफुसाते हुए कहा।"
+        },
+        {
+          "english": "The terrified elephant king bowed his head, promised never to return or harm the rabbits again, and led his herd away forever.",
+          "hindi": "भयभीत हाथी राजा ने अपना सिर झुकाया, कभी वापस न आने या खरगोशों को दोबारा नुकसान न पहुँचाने का वादा किया, और अपने झुंड को हमेशा के लिए दूर ले गया।"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The Sparrow and the Elephant",
+      "moral": "Collective wit and teamwork can overcome massive strength.",
+      "sentences": [
+        {
+          "english": "A sparrow couple lived happily in a nest they built on a tree branch where they had laid their eggs.",
+          "hindi": "एक गौरैया का जोड़ा पेड़ की एक शाखा पर बनाए गए घोंसले में खुशी-खुशी रहता था जहाँ उन्होंने अपने अंडे दिए थे।"
+        },
+        {
+          "english": "One morning, a wild elephant gripped by spring fever rampaged through the area and aggressively snapped the branch supporting the nest.",
+          "hindi": "एक सुबह, वसंत के बुखार की चपेट में आए एक जंगली हाथी ने क्षेत्र में उत्पात मचाया और आक्रामक रूप से घोंसले को सहारा देने वाली शाखा को तोड़ दिया।"
+        },
+        {
+          "english": "The eggs were completely destroyed, leaving the mother sparrow heartbroken.",
+          "hindi": "अंडे पूरी तरह से नष्ट हो गए, जिससे माँ गौरैया का दिल टूट गया।"
+        },
+        {
+          "english": "Seeing her grief, her friend the woodpecker offered comfort and promised a plan to destroy the elephant.",
+          "hindi": "उसका दुख देखकर, उसके मित्र कटफोड़वा ने उसे दिलासा दिया और हाथी को नष्ट करने की योजना का वादा किया।"
+        },
+        {
+          "english": "The woodpecker enlisted a black fly, who in turn brought in a counselor frog.",
+          "hindi": "कटफोड़वा ने एक काली मक्खी को काम पर लगाया, जो बदले में एक सलाहकार मेंढक को ले आई।"
+        },
+        {
+          "english": "Together, they devised a brilliant scheme.",
+          "hindi": "उन्होंने मिलकर एक शानदार योजना बनाई।"
+        },
+        {
+          "english": "At noon, the black fly began buzzing sweet music directly into the elephant’s ears.",
+          "hindi": "दोपहर के समय, काली मक्खी हाथी के कानों में सीधे मधुर संगीत गुनगुनाने लगी।"
+        },
+        {
+          "english": "Charmed, the elephant closed his eyes to listen.",
+          "hindi": "मुग्ध होकर, हाथी ने सुनने के लिए अपनी आँखें बंद कर लीं।"
+        },
+        {
+          "english": "Instantly, the woodpecker flew down and pecked out the elephant's eyes, blinding him.",
+          "hindi": "तुरंत, कटफोड़वा नीचे उड़कर आया और उसने हाथी की आँखें फोड़ दीं, जिससे वह अंधा हो गया।"
+        },
+        {
+          "english": "Thirsty and in pain, the elephant stumbled through the forest searching for water.",
+          "hindi": "प्यासा और दर्द से कराहता हुआ, हाथी पानी की तलाश में जंगल में लड़खड़ाने लगा।"
+        },
+        {
+          "english": "The frog sat at the edge of a massive, deep pit and croaked loudly.",
+          "hindi": "मेंढक एक बड़े, गहरे गड्ढे के किनारे बैठ गया और जोर-जोर से टरटराने लगा।"
+        },
+        {
+          "english": "Misled into thinking the croaking meant a fresh pond was nearby, the elephant charged forward, tumbled into the pit, and died.",
+          "hindi": "टरटराने की आवाज़ सुनकर यह सोचने के धोखे में आकर कि पास ही में कोई ताज़ा तालाब है, हाथी आगे बढ़ा, गड्ढे में गिर गया और मर गया।"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "The Sage's Daughter",
+      "moral": "Destiny cannot be changed.",
+      "sentences": [
+        {
+          "english": "A childless sage lived with his wife on the banks of a river.",
+          "hindi": "एक निःसंतान साधु अपनी पत्नी के साथ एक नदी के किनारे रहता था।"
+        },
+        {
+          "english": "One day, while the sage was praying in the water, an eagle flying overhead accidentally dropped a tiny female mouse right into his hands.",
+          "hindi": "एक दिन, जब साधु पानी में प्रार्थना कर रहा था, ऊपर उड़ते हुए एक चील ने गलती से एक छोटी मादा चुहिया को सीधे उसके हाथों में गिरा दिया।"
+        },
+        {
+          "english": "He brought the mouse home, and he and his wife used his mystical powers to transform the creature into a human baby girl.",
+          "hindi": "वह चुहिया को घर ले आया, और उसने और उसकी पत्नी ने अपनी रहस्यमयी शक्तियों का उपयोग करके उस जीव को एक मानव बच्ची में बदल दिया।"
+        },
+        {
+          "english": "They raised her as their own daughter, and she grew into a beautiful maiden.",
+          "hindi": "उन्होंने उसका पालन-पोषण अपनी बेटी की तरह किया, और वह एक सुंदर युवती के रूप में बड़ी हुई।"
+        },
+        {
+          "english": "When she turned sixteen, the sage sought the most powerful groom in the universe for her and called upon the Sun God.",
+          "hindi": "जब वह सोलह वर्ष की हुई, तो साधु ने उसके लिए ब्रह्मांड के सबसे शक्तिशाली दूल्हे की तलाश की और सूर्य देव का आह्वान किया।"
+        },
+        {
+          "english": "However, the daughter rejected him, saying, \"He is far too hot, and I will be reduced to ashes.\"",
+          "hindi": "हालाँकि, बेटी ने उन्हें यह कहते हुए अस्वीकार कर दिया, \"वे बहुत गर्म हैं, और मैं जलकर राख हो जाऊँगी।\""
+        },
+        {
+          "english": "The Sun God suggested the Lord of the Clouds, who can easily block the sun's rays.",
+          "hindi": "सूर्य देव ने बादलों के स्वामी का सुझाव दिया, जो आसानी से सूर्य की किरणों को रोक सकते हैं।"
+        },
+        {
+          "english": "When the Cloud God appeared, the girl rejected him too, citing his dark appearance and terrifying thunder.",
+          "hindi": "जब मेघ देव प्रकट हुए, तो लड़की ने उनका काला रूप और भयानक गर्जना का हवाला देते हुए उन्हें भी अस्वीकार कर दिया।"
+        },
+        {
+          "english": "The Cloud God suggested the Wind God, who easily blows clouds away.",
+          "hindi": "मेघ देव ने पवन देव का सुझाव दिया, जो बादलों को आसानी से उड़ा देते हैं।"
+        },
+        {
+          "english": "The girl rejected the Wind God because he was restless and always on the move.",
+          "hindi": "लड़की ने पवन देव को अस्वीकार कर दिया क्योंकि वे अशांत थे और हमेशा चलते रहते थे।"
+        },
+        {
+          "english": "The Wind God pointed to the Mountain Lord, who stands rock-solid against the wind.",
+          "hindi": "पवन देव ने पर्वत राज की ओर इशारा किया, जो हवा के सामने चट्टान की तरह अडिग रहते हैं।"
+        },
+        {
+          "english": "Yet, the daughter rejected the mountain, calling him cold-hearted, and requested someone softer but stronger.",
+          "hindi": "फिर भी, बेटी ने पर्वत राज को कठोर दिल कहकर खारिज कर दिया और किसी अधिक कोमल लेकिन मजबूत व्यक्ति की मांग की।"
+        },
+        {
+          "english": "Finally, the Mountain Lord suggested a mouse, as mice are soft yet easily chew holes straight through mountains.",
+          "hindi": "अंततः, पर्वत राज ने एक चूहे का सुझाव दिया, क्योंकि चूहे कोमल होते हैं फिर भी वे आसानी से पहाड़ों में छेद कर देते हैं।"
+        },
+        {
+          "english": "Hearing this, the daughter happily agreed.",
+          "hindi": "यह सुनकर बेटी खुशी-खुशी मान गई।"
+        },
+        {
+          "english": "The sage smiled at the work of destiny, turned her back into a mouse, and happily wed her to her match.",
+          "hindi": "साधु नियति के खेल पर मुस्कुराया, उसने उसे वापस एक चुहिया में बदल दिया, और खुशी-खुशी उसका विवाह उसके योग्य वर से कर दिया।"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "The Blue Jackal",
+      "moral": "You cannot hide your true nature for long.",
+      "sentences": [
+        {
+          "english": "A hungry jackal wandered into a city looking for food and ended up being chased by a pack of aggressive dogs.",
+          "hindi": "एक भूखा सियार भोजन की तलाश में एक शहर में आ गया और अंत में आक्रामक कुत्तों के एक झुंड द्वारा उसका पीछा किया जाने लगा।"
+        },
+        {
+          "english": "In his desperation to hide, he ducked into a dyer's house and fell directly into a large vat of indigo dye, staining his fur bright blue from head to toe.",
+          "hindi": "छिपने की अपनी हताशा में, वह एक रंगरेज के घर में घुस गया और सीधे नील के एक बड़े टब में गिर गया, जिससे उसके शरीर के बाल सिर से पैर तक चमकीले नीले हो गए।"
+        },
+        {
+          "english": "When he returned to the forest, the animals were terrified because they couldn't identify what kind of creature he was.",
+          "hindi": "जब वह जंगल में लौटा, तो जानवर डर गए क्योंकि वे पहचान नहीं पा रहे थे कि वह किस तरह का जीव था।"
+        },
+        {
+          "english": "Seising the opportunity, the jackal proclaimed, \"I am a fierce creature sent directly by Indra, the King of Gods, to guard this forest!\"",
+          "hindi": "अवसर का लाभ उठाते हुए, सियार ने घोषणा की, \"मैं देवताओं के राजा इंद्र द्वारा इस जंगल की रक्षा के लिए सीधे भेजा गया एक भयानक जीव हूँ!\""
+        },
+        {
+          "english": "The gullible animals believed him.",
+          "hindi": "भोले-भाले जानवरों ने उसकी बात पर विश्वास कर लिया।"
+        },
+        {
+          "english": "The blue jackal established a grand court, appointing the lion as his prime minister, the tiger as his bedroom guardian, and the elephant as his doorkeeper.",
+          "hindi": "नीले सियार ने एक भव्य दरबार स्थापित किया, जिसमें उसने शेर को अपना प्रधानमंत्री, बाघ को अपने शयनकक्ष का रक्षक और हाथी को अपना द्वारपाल नियुक्त किया।"
+        },
+        {
+          "english": "He promptly banished all other jackals from the forest so no one would recognize him.",
+          "hindi": "उसने तुरंत जंगल से अन्य सभी सियारों को निर्वासित कर दिया ताकि उसे कोई पहचान न सके।"
+        },
+        {
+          "english": "He lived a life of supreme luxury while the other animals hunted and brought him food.",
+          "hindi": "वह अत्यधिक विलासिता का जीवन जीने लगा जबकि अन्य जानवर शिकार करते और उसके लिए भोजन लाते थे।"
+        },
+        {
+          "english": "One evening, a pack of wild jackals passed nearby, howling loudly.",
+          "hindi": "एक शाम, जंगली सियारों का एक झुंड जोर-जो़र से चिल्लाते हुए पास से गुजरा।"
+        },
+        {
+          "english": "Unable to suppress his natural instincts, the blue jackal joined in and howled at the top of his voice.",
+          "hindi": "अपनी स्वाभाविक प्रवृत्ति को दबाने में असमर्थ होने के कारण, नीला सियार भी उनके साथ शामिल हो गया और अपनी पूरी ताकत से चिल्लाने लगा।"
+        },
+        {
+          "english": "Realizing they had been fooled by an ordinary jackal, the enraged animals killed him instantly.",
+          "hindi": "यह महसूस करते हुए कि उन्हें एक साधारण सियार द्वारा मूर्ख बनाया गया था, क्रोधित जानवरों ने उसे तुरंत मार डाला।"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "The Mongoose and the Farmer's Wife",
+      "moral": "Do not act in haste; think carefully before you strike.",
+      "sentences": [
+        {
+          "english": "A farmer and his wife had a newborn son.",
+          "hindi": "एक किसान और उसकी पत्नी का एक नवजात बेटा था।"
+        },
+        {
+          "english": "Wanting a companion and protector for the baby, they decided to adopt a young mongoose as a pet.",
+          "hindi": "बच्चे के लिए एक साथी और रक्षक चाहने के कारण, उन्होंने एक छोटे नेवले को पालतू जानवर के रूप में अपनाने का फैसला किया।"
+        },
+        {
+          "english": "A few months later, the couple needed to leave the house briefly.",
+          "hindi": "कुछ महीनों बाद, दंपत्ति को कुछ समय के लिए घर से बाहर जाने की आवश्यकता पड़ी।"
+        },
+        {
+          "english": "Believing the mongoose would watch over the baby, they left them alone together.",
+          "hindi": "यह विश्वास करते हुए कि नेवला बच्चे की देखभाल करेगा, उन्होंने उन्हें एक साथ अकेला छोड़ दिया।"
+        },
+        {
+          "english": "The farmer's wife returned home first and was horrified to find the mongoose waiting at the door with its mouth heavily stained with fresh blood.",
+          "hindi": "किसान की पत्नी पहले घर लौटी और नेवले को दरवाजे पर इंतजार करते हुए देख कर भयभीत हो गई, जिसका मुँह ताजे खून से लथपथ था।"
+        },
+        {
+          "english": "Assuming the animal had killed her infant, she flew into a blind rage and threw a heavy box directly at the mongoose, severely injuring it.",
+          "hindi": "यह मानते हुए कि जानवर ने उसके बच्चे को मार डाला है, वह अत्यधिक क्रोधित हो गई और उसने सीधे नेवले पर एक भारी बक्सा फेंक दिया, जिससे वह गंभीर रूप से घायल हो गया।"
+        },
+        {
+          "english": "She rushed into the nursery, only to find her baby sleeping peacefully next to a dead, torn snake.",
+          "hindi": "वह तेजी से नर्सरी में गई, तो उसने अपने बच्चे को एक मरे हुए, कटे-फटे सांप के पास चैन से सोते हुए पाया।"
+        },
+        {
+          "english": "Realizing the mongoose had actually saved her son's life, she ran outside, but it was too late—the loyal animal had died from the blow.",
+          "hindi": "यह महसूस करते हुए कि वास्तव में नेवले ने उसके बेटे की जान बचाई थी, वह बाहर भागी, लेकिन बहुत देर हो चुकी थी—वफादार जानवर की चोट के कारण मृत्यु हो चुकी थी।"
+        },
+        {
+          "english": "She wept bitterly over her hasty actions.",
+          "hindi": "वह अपने जल्दबाजी भरे कदम पर फूट-फूट कर रोई।"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The Greedy Jackal",
+      "moral": "Excessive greed always brings its own ruin.",
+      "sentences": [
+        {
+          "english": "A lazy jackal was wandering through the hills one day when he stumbled upon a grim scene: a dead hunter, a dead wild boar, and a bow lying on the ground.",
+          "hindi": "एक आलसी सियार एक दिन पहाड़ियों में घूम रहा था जब उसे एक भयानक दृश्य दिखाई दिया: एक मृत शिकारी, एक मृत जंगली सूअर और जमीन पर पड़ा हुआ एक धनुष।"
+        },
+        {
+          "english": "The hunter had shot the boar with an arrow, but the wounded boar had killed the hunter before collapsing and dying from its injuries.",
+          "hindi": "शिकारी ने सूअर को तीर से मारा था, लेकिन घायल सूअर ने गिरने और अपनी चोटों से मरने से पहले शिकारी को मार डाला था।"
+        },
+        {
+          "english": "The jackal rejoiced at finding an enormous amount of food that would last him for weeks.",
+          "hindi": "सियार इतनी बड़ी मात्रा में भोजन पाकर प्रसन्न हुआ जो उसे हफ्तों तक चल सकता था।"
+        },
+        {
+          "english": "However, his excessive greed got the better of him.",
+          "hindi": "हालाँकि, उसका अत्यधिक लालच उस पर हावी हो गया।"
+        },
+        {
+          "english": "He decided to preserve the meat and eat the tightly strung bowstring first.",
+          "hindi": "उसने मांस को सुरक्षित रखने और पहले कसकर खींची गई धनुष की डोरी को खाने का फैसला किया।"
+        },
+        {
+          "english": "The moment he bit into the taut string, it snapped violently, causing the sharp wooden end of the bow to pierce right through his mouth, killing him instantly.",
+          "hindi": "जैसे ही उसने तनी हुई डोरी को काटा, वह तेजी से टूट गई, जिससे धनुष का नुकीला लकड़ी का सिरा उसके मुँह के आर-पार हो गया और उसकी तुरंत मृत्यु हो गई।"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "The Daydreaming Priest",
+      "moral": "There is no substitute for hard work; dreams cannot be fulfilled without action.",
+      "sentences": [
+        {
+          "english": "A deeply lazy and impoverished priest survived entirely by begging for alms, all while constantly dreaming of becoming incredibly wealthy.",
+          "hindi": "एक अत्यंत आलसी और गरीब पुजारी पूरी तरह से भीख मांगकर गुजारा करता था, और साथ ही वह लगातार अविश्वसनीय रूप से अमीर बनने के सपने देखता रहता था।"
+        },
+        {
+          "english": "One morning, he received a generous pot of milk.",
+          "hindi": "एक सुबह, उसे दूध से भरा एक बड़ा बर्तन मिला।"
+        },
+        {
+          "english": "He took it home, boiled it, drank a little, and added a small amount of curd to set the rest into curd overnight.",
+          "hindi": "वह उसे घर ले आया, उसे उबाला, थोड़ा पिया, और बाकी बचे हिस्से को रात भर में दही जमाने के लिए थोड़ा सा दही मिला दिया।"
+        },
+        {
+          "english": "As he lay down to sleep, his mind began to race with wild daydreams about the pot.",
+          "hindi": "जैसे ही वह सोने के लिए लेटा, उसका मन बर्तन के बारे में अजीबोगरीब सपने बुनने लगा।"
+        },
+        {
+          "english": "He imagined: \"By morning, the milk will turn to curd. I will churn it into rich butter, heat it into ghee, and sell it at the market. With that money, I’ll buy a hen. The hen will lay eggs, leading to an entire poultry farm. Then I’ll trade the poultry for cows, open a massive dairy, and sell milk to the entire town. I’ll buy precious jewels, sell them to the king, and become so rich that I can marry a beautiful girl from a wealthy family. We will have a handsome son, and if he plays any mischief, I will get furious and beat him with a big stick like this!\"",
+          "hindi": "उसने कल्पना की: \"सुबह तक दूध दही में बदल जाएगा। मैं इसे मथकर मक्खन बनाऊँगा, उसे गर्म करके घी बनाऊँगा और उसे बाजार में बेच दूँगा। उस पैसे से मैं एक मुर्गी खरीदूँगा। मुर्गी अंडे देगी, जिससे एक पूरा पोल्ट्री फार्म बन जाएगा। फिर मैं मुर्गियों के बदले गायें खरीदूँगा, एक विशाल डेयरी खोलूँगा और पूरे शहर को दूध बेचूँगा। मैं कीमती आभूषण खरीदूँगा, उन्हें राजा को बेचूँगा और इतना अमीर बन जाऊँगा कि एक अमीर परिवार की सुंदर लड़की से शादी कर सकूँ। हमारा एक सुंदर बेटा होगा, और यदि वह कोई शरारत करेगा, तो मैं अत्यधिक क्रोधित हो जाऊँगा और उसे इस तरह एक बड़े डंडे से पीटूंगा!\""
+        },
+        {
+          "english": "Lost entirely in his fantasy, his arm involuntarily grabbed a real stick resting next to his bed.",
+          "hindi": "अपनी कल्पना में पूरी तरह खोए रहने के कारण, उसके हाथ ने अनजाने में उसके बिस्तर के पास रखे एक असली डंडे को पकड़ लिया।"
+        },
+        {
+          "english": "He swung it hard, hitting the hanging pot.",
+          "hindi": "उसने उसे जोर से घुमाया, जिससे वह लटके हुए बर्तन से टकरा गया।"
+        },
+        {
+          "english": "The pot shattered completely, spilling the milk everywhere and instantly waking him to reality.",
+          "hindi": "बर्तन पूरी तरह से टूट गया, जिससे दूध हर जगह फैल गया और वह तुरंत वास्तविकता में जाग गया।"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "The Heron and the Crab",
+      "moral": "Greed and deceit ultimately destroy the perpetrator.",
+      "sentences": [
+        {
+          "english": "An old, lazy heron lived near a pond and grew tired of fishing for his food.",
+          "hindi": "एक बूढ़ा, आलसी बगुला तालाब के पास रहता था और अपने भोजन के लिए मछलियाँ पकड़ते-पकड़ते थक गया था।"
+        },
+        {
+          "english": "He devised a trick, standing by the water with a deeply sorrowful expression.",
+          "hindi": "उसने एक तरकीब सोची, और बहुत ही उदास चेहरे के साथ पानी के पास खड़ा हो गया।"
+        },
+        {
+          "english": "A wise crab, who often helped the fish, noticed him and asked what was wrong.",
+          "hindi": "एक बुद्धिमान केकड़े ने, जो अक्सर मछलियों की मदद करता था, उसे देखा और पूछा कि क्या बात है।"
+        },
+        {
+          "english": "The heron sighed, \"Alas! I overheard some fishermen saying they are going to cast nets and catch every single fish in this pond. I am heartbroken. However, I know of a beautiful, hidden lake far away where you would all be perfectly safe. If the fish want, I can carry a few of them in my beak every day to relocate them.\"",
+          "hindi": "बगुले ने आह भरते हुए कहा, \"अफ़सोस! मैंने कुछ मछुआरों को यह कहते सुना है कि वे जाल डालने जा रहे हैं और इस तालाब की हर एक मछली को पकड़ने वाले हैं। मेरा दिल टूट गया है। हालाँकि, मुझे दूर एक सुंदर, छिपी हुई झील के बारे में पता है जहाँ आप सभी पूरी तरह से सुरक्षित रहेंगे। यदि मछलियाँ चाहें, तो मैं उन्हें स्थानांतरित करने के लिए हर दिन अपनी चोंच में कुछ मछलियों को ले जा सकता हूँ।\""
+        },
+        {
+          "english": "Terrified, the fish eagerly volunteered.",
+          "hindi": "भयभीत होकर, मछलियों ने उत्सुकता से स्वेच्छा व्यक्त की।"
+        },
+        {
+          "english": "Every day, the heron loaded a few fish into his beak, flew over to a large flat rock, ate them, and left their bones scattered across the stone.",
+          "hindi": "हर दिन, बगुला अपनी चोंच में कुछ मछलियाँ भरता, एक बड़ी चपटी चट्टान पर उड़कर जाता, उन्हें खाता और उनकी हड्डियों को पत्थर पर बिखरा हुआ छोड़ देता।"
+        },
+        {
+          "english": "Eventually, the crab asked for a turn to be relocated.",
+          "hindi": "आखिरकार, केकड़े ने भी स्थानांतरित होने की अपनी बारी मांगी।"
+        },
+        {
+          "english": "As they flew near the rock, the crab looked down and saw the massive pile of fish bones.",
+          "hindi": "जैसे ही वे चट्टान के पास उड़े, केकड़े ने नीचे देखा और मछलियों की हड्डियों का एक बड़ा ढेर देखा।"
+        },
+        {
+          "english": "Realizing the heron’s deadly trap, the crab quickly clamped his sharp claws tightly around the heron's neck and snapped his head clean off.",
+          "hindi": "बगुले के घातक जाल को महसूस करते हुए, केकड़े ने जल्दी से अपने नुकीले पंजों को बगुले की गर्दन के चारों ओर कसकर दबा दिया और उसका सिर धड़ से अलग कर दिया।"
+        },
+        {
+          "english": "The crab crawled back to the pond and exposed the heron's lies to the remaining fish.",
+          "hindi": "केकड़ा वापस तालाब की ओर रेंगता हुआ गया और बगुले के झूठ का भंडाफोड़ बची हुई मछलियों के सामने कर दिया।"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "The Crows and the Serpent",
+      "moral": "Intelligence wins over might.",
+      "sentences": [
+        {
+          "english": "A crow couple built a beautiful nest at the top of a tree, but a wicked black serpent lived in a hollow burrow at the bottom of the same tree.",
+          "hindi": "कौवे के एक जोड़े ने एक पेड़ के शीर्ष पर एक सुंदर घोंसला बनाया था, लेकिन एक दुष्ट काला सांप उसी पेड़ के नीचे एक खोखले बिल में रहता था।"
+        },
+        {
+          "english": "Every time the female crow laid eggs, the serpent crawled up the trunk and ate them, leaving the couple heartbroken.",
+          "hindi": "हर बार जब मादा कौवा अंडे देती, तो सांप तने पर रेंगते हुए ऊपर चढ़ जाता और उन्हें खा जाता, जिससे वह जोड़ा बेहद दुखी हो जाता।"
+        },
+        {
+          "english": "Desperate for a solution, the crows approached their clever friend, the jackal, for advice.",
+          "hindi": "किसी समाधान के लिए बेताब होकर, कौवे सलाह के लिए अपने चतुर मित्र सियार के पास गए।"
+        },
+        {
+          "english": "The jackal instructed them, \"Go to the royal palace, steal a highly valuable item belonging to the queen, and drop it directly into the snake's burrow.\"",
+          "hindi": "सियार ने उन्हें निर्देश दिया, \"राजमहल जाओ, रानी की कोई अत्यधिक मूल्यवान वस्तु चुराओ, और उसे सीधे सांप के बिल में डाल दो।\""
+        },
+        {
+          "english": "The crow flew to the palace gardens and snatched a costly necklace while the queen was bathing.",
+          "hindi": "कौवा महल के बगीचे में उड़ा और उसने रानी के नहाने के दौरान एक महंगा हार छीन लिया।"
+        },
+        {
+          "english": "The royal guards immediately chased the bird.",
+          "hindi": "शाही रक्षकों ने तुरंत पक्षी का पीछा किया।"
+        },
+        {
+          "english": "The crow flew back to the tree and dropped the glittering necklace straight into the serpent’s burrow right in front of the guards.",
+          "hindi": "कौवा वापस पेड़ पर उड़ गया और उसने चमकते हुए हार को रक्षकों के ठीक सामने सांप के बिल में डाल दिया।"
+        },
+        {
+          "english": "When the guards dug into the burrow to retrieve the treasure, the serpent emerged hissed aggressively.",
+          "hindi": "जब रक्षकों ने खजाना निकालने के लिए बिल खोदा, तो सांप आक्रामक रूप से फुसकारते हुए बाहर निकला।"
+        },
+        {
+          "english": "The guards killed the snake on the spot, recovered the necklace, and left the crow family to live in peace.",
+          "hindi": "रक्षकों ने मौके पर ही सांप को मार डाला, हार बरामद किया और कौवे के परिवार को शांति से रहने के लिए छोड़ दिया।"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "The Gold-Giving Serpent",
+      "moral": "Excess greed only leads to total loss.",
+      "sentences": [
+        {
+          "english": "A poor Brahmin worked tirelessly on his fields, but his crops never yielded any profit.",
+          "hindi": "एक गरीब ब्राह्मण अपने खेतों पर अथक परिश्रम करता था, लेकिन उसकी फसलों से कभी कोई लाभ नहीं हुआ।"
+        },
+        {
+          "english": "One hot afternoon, he noticed a large anthill on his land and saw a majestic serpent emerging from it.",
+          "hindi": "एक गर्म दोपहर, उसने अपनी जमीन पर एक बड़ी दीमक की बांबी देखी और उससे एक प्रतापी सांप को निकलते हुए देखा।"
+        },
+        {
+          "english": "Thinking he had neglected the guardian deity of his land, he brought a plate of milk and offered it to the anthill.",
+          "hindi": "यह सोचकर कि उसने अपनी भूमि के रक्षक देवता की उपेक्षा की है, वह एक प्लेट दूध लाया और उसे बांबी के पास चढ़ा दिया।"
+        },
+        {
+          "english": "The next morning, when he went to retrieve the plate, he was astonished to find a bright gold coin resting on it.",
+          "hindi": "अगली सुबह, जब वह प्लेट वापस लेने गया, तो वह उस पर एक चमकदार सोने का सिक्का देखकर चकित रह गया।"
+        },
+        {
+          "english": "From that day on, the Brahmin offered milk daily and received a gold coin every morning.",
+          "hindi": "उस दिन से, ब्राह्मण रोजाना दूध चढ़ाता था और हर सुबह उसे एक सोने का सिक्का मिलता था।"
+        },
+        {
+          "english": "One day, the Brahmin had to travel to the city, so he instructed his son to feed the serpent.",
+          "hindi": "एक दिन, ब्राह्मण को शहर की यात्रा करनी पड़ी, इसलिए उसने अपने बेटे को सांप को खाना खिलाने का निर्देश दिया।"
+        },
+        {
+          "english": "The greedy son thought, \"This anthill must be completely filled with thousands of gold coins! Why should I wait every day?\"",
+          "hindi": "लालची बेटे ने सोचा, \"यह बांबी पूरी तरह से हजारों सोने के सिक्कों से भरी होनी चाहिए! मुझे हर दिन क्यों इंतजार करना चाहिए?\""
+        },
+        {
+          "english": "He took a heavy stick and struck the serpent on the head.",
+          "hindi": "उसने एक भारी डंडा लिया और सांप के सिर पर वार किया।"
+        },
+        {
+          "english": "The injured snake survived the blow, bit the boy in self-defense, and the boy died instantly.",
+          "hindi": "घायल सांप हमले में बच गया, उसने आत्मरक्षा में लड़के को काट लिया, और लड़का तुरंत मर गया।"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "The Swan and the Owl",
+      "moral": "True friendship should be formed between equals who share the same lifestyle.",
+      "sentences": [
+        {
+          "english": "A elegant swan spent his days playing around a beautiful lake.",
+          "hindi": "एक सुंदर हंस अपने दिन एक खूबसूरत झील के किनारे खेलने में बिताता था।"
+        },
+        {
+          "english": "One day, an owl visited him, flattered him with praises, and requested to be his friend.",
+          "hindi": "एक दिन, एक उल्लू उसके पास आया, प्रशंसा करके उसकी चापलूसी की और उसका मित्र बनने का अनुरोध किया।"
+        },
+        {
+          "english": "The swan agreed, and they spent many happy days together by the lakeside.",
+          "hindi": "हंस सहमत हो गया, और उन्होंने झील के किनारे एक साथ कई खुशी के दिन बिताए।"
+        },
+        {
+          "english": "Soon, the owl grew bored of the lake and said, \"I am returning to my home in the Lotus Wood. If you ever wish to visit me, come find me there.\"",
+          "hindi": "जल्द ही, उल्लू झील से ऊब गया और बोला, \"मैं कमल वन में अपने घर लौट रहा हूँ। यदि तुम कभी मुझसे मिलना चाहो, तो वहाँ आकर मुझे ढूंढ लेना।\""
+        },
+        {
+          "english": "Eventually, the swan traveled to the Lotus Wood, but because it was daytime, the owl was hiding inside a dark tree hollow.",
+          "hindi": "आखिरकार, हंस ने कमल वन की यात्रा की, लेकिन चूंकि दिन का समय था, उल्लू एक अंधेरे पेड़ के खोखले हिस्से में छिपा हुआ था।"
+        },
+        {
+          "english": "The owl called out, telling the swan to rest until the sun set, as he could only come out at night.",
+          "hindi": "उल्लू ने चिल्लाकर हंस से सूर्यास्त तक आराम करने के लिए कहा, क्योंकि वह केवल रात में ही बाहर आ सकता था।"
+        },
+        {
+          "english": "The next morning, while the swan was resting on a branch, a caravan of merchants passed through the woods.",
+          "hindi": "अगली सुबह, जब हंस एक शाखा पर आराम कर रहा था, व्यापारियों का एक कारवां जंगल से गुजरा।"
+        },
+        {
+          "english": "The merchants began chanting hymns, and the owl inside the tree gave a loud, ill-timed hoot.",
+          "hindi": "व्यापारियों ने भजनों का जाप करना शुरू कर दिया, और पेड़ के अंदर से उल्लू ने एक तेज, असमय आवाज निकाली।"
+        },
+        {
+          "english": "Believing the hooting was a terrible omen, one of the merchants drew an arrow to shoot down the bird.",
+          "hindi": "यह मानकर कि उल्लू की बोली एक बुरा शगुन थी, व्यापारियों में से एक ने पक्षी को मार गिराने के लिए तीर खींचा।"
+        },
+        {
+          "english": "Sensing danger, the owl quickly retreated deeper into his hole, but the innocent swan didn't move in time.",
+          "hindi": "खतरे को भांपते हुए, उल्लू जल्दी से अपने बिल में और गहरा चला गया, लेकिन निर्दोष हंस समय पर नहीं हटा।"
+        },
+        {
+          "english": "The arrow struck the swan, killing him.",
+          "hindi": "तीर हंस को लगा, जिससे उसकी मृत्यु हो गई।"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "The Cat, the Partridge, and the Hare",
+      "moral": "When two people fight blindly, an unscrupulous mediator walks away with the prize.",
+      "sentences": [
+        {
+          "english": "A partridge lived comfortably in a dwelling at the foot of a tree.",
+          "hindi": "एक तीतर पेड़ के नीचे एक घोंसले में आराम से रहता था।"
+        },
+        {
+          "english": "One day, it traveled to distant fields to feast on crops and stayed away for several weeks.",
+          "hindi": "एक दिन, वह फसलों को खाने के लिए दूर के खेतों में गया और कई हफ्तों तक दूर रहा।"
+        },
+        {
+          "english": "In its absence, a hare stumbled upon the empty spot and moved in.",
+          "hindi": "उसकी अनुपस्थिति में, एक खरगोश को वह खाली जगह मिली और वह उसमें रहने लगा।"
+        },
+        {
+          "english": "When the plump partridge finally returned, it demanded its home back.",
+          "hindi": "जब मोटा तीतर आखिरकार वापस लौटा, तो उसने अपना घर वापस मांगा।"
+        },
+        {
+          "english": "A fierce argument ensued, with the hare arguing that property belongs to whoever currently occupies it, while the partridge claimed ancestral ownership.",
+          "hindi": "एक भयंकर बहस छिड़ गई, जिसमें खरगोश ने तर्क दिया कि संपत्ति उस व्यक्ति की होती है जो वर्तमान में उस पर कब्जा करता है, जबकि तीतर ने पैतृक स्वामित्व का दावा किया।"
+        },
+        {
+          "english": "They decided to find a mediator and approached a cat living nearby who was known for posing as a deeply religious ascetic.",
+          "hindi": "उन्होंने एक मध्यस्थ खोजने का फैसला किया और पास में रहने वाली एक बिल्ली के पास गए जो एक गहरे धार्मिक तपस्वी होने का नाटक करने के लिए जानी जाती थी।"
+        },
+        {
+          "english": "Seeing them approach from a distance, the hypocritical cat put on a holy act and whispered weakly, \"Alas, old age has made me partially deaf. Step closer, dear friends, and speak directly into my ear so I can judge your case fairly.\"",
+          "hindi": "उन्हें दूर से आते देखकर, पाखंडी बिल्ली ने पवित्र होने का नाटक किया और कमजोरी से फुसफुसाई, \"अफ़सोस, बुढ़ापे ने मुझे आंशिक रूप से बहरा बना दिया है। मेरे और पास आओ, प्यारे दोस्तों, और सीधे मेरे कान में बोलो ताकि मैं तुम्हारे मामले का निष्पक्ष न्याय कर सकूँ।\""
+        },
+        {
+          "english": "Foolish and trusting, both the hare and the partridge stepped right up to the cat's face.",
+          "hindi": "मूर्ख और विश्वासी होकर, खरगोश और तीतर दोनों सीधे बिल्ली के चेहरे के ठीक सामने आ गए।"
+        },
+        {
+          "english": "The moment they were within reach, the cat struck, killed them both, and turned them into his meal.",
+          "hindi": "जैसे ही वे उसकी पहुँच के भीतर आए, बिल्ली ने हमला किया, उन दोनों को मार डाला और उन्हें अपना भोजन बना लिया।"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "The Geese and the Tortoise",
+      "moral": "Always listen to wise counsel and know when to stay silent.",
+      "sentences": [
+        {
+          "english": "A pair of geese and a tortoise were inseparable friends who lived by a beautiful lake.",
+          "hindi": "बत्तखों का एक जोड़ा और एक कछुआ अभिन्न मित्र थे जो एक सुंदर झील के किनारे रहते थे।"
+        },
+        {
+          "english": "A severe drought struck the region, and their lake began drying up rapidly.",
+          "hindi": "क्षेत्र में भीषण सूखा पड़ा, और उनकी झील तेजी से सूखने लगी।"
+        },
+        {
+          "english": "The geese decided they must fly to a distant, water-filled lake, but the tortoise couldn't fly.",
+          "hindi": "बत्तखों ने फैसला किया कि उन्हें एक दूर की, पानी से भरी झील पर उड़ना चाहिए, लेकिन कछुआ उड़ नहीं सकता था।"
+        },
+        {
+          "english": "The geese came up with a creative plan: \"We will hold a strong stick on either end with our beaks, and you must grip the center of the stick tightly with your mouth. However, you must promise to keep your mouth completely shut, no matter what, or you will fall to your death.\"",
+          "hindi": "बत्तखों ने एक रचनात्मक योजना बनाई: \"हम अपनी चोंच से एक मजबूत छड़ी को दोनों सिरों से पकड़ेंगे, और तुम्हें अपने मुँह से छड़ी के बीच के हिस्से को कसकर पकड़ना होगा। हालाँकि, तुम्हें चाहे कुछ भी हो जाए, अपना मुँह पूरी तरह से बंद रखने का वादा करना होगा, अन्यथा तुम गिरकर मर जाओगे।\""
+        },
+        {
+          "english": "The tortoise agreed.",
+          "hindi": "कछुआ सहमत हो गया।"
+        },
+        {
+          "english": "As they flew over a town, the townsfolk looked up, laughed, and cheered at the sight of geese carrying a tortoise.",
+          "hindi": "जब वे एक शहर के ऊपर से उड़े, तो शहर के लोगों ने ऊपर देखा, हँसे, और बत्तखों द्वारा कछुए को ले जाने के दृश्य पर खुशी व्यक्त की।"
+        },
+        {
+          "english": "Unable to control his anger and anxiety, the tortoise opened his mouth to shout, \"What are they laughing about?!\"",
+          "hindi": "अपने क्रोध और चिंता को नियंत्रित करने में असमर्थ होकर, कछुए ने चिल्लाने के लिए अपना मुँह खोला, \"वे किस बात पर हँस रहे हैं?!\""
+        },
+        {
+          "english": "The moment he let go of the stick, he plummeted to the ground and died.",
+          "hindi": "जैसे ही उसने छड़ी छोड़ी, वह जमीन पर गिर गया और उसकी मृत्यु हो गई।"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "The Bird with the Two Necks",
+      "moral": "A lack of sharing and cooperation within a single unit leads to mutual destruction.",
+      "sentences": [
+        {
+          "english": "Long ago, there lived a strange, mythical bird that possessed two distinct necks and heads but shared one single stomach.",
+          "hindi": "बहुत समय पहले, वहाँ एक अजीब, पौराणिक पक्षी रहता था जिसके पास दो अलग-अलग गर्दन और सिर थे लेकिन उसका पेट एक ही था।"
+        },
+        {
+          "english": "One day, the first head discovered a jar of delicious, sweet nectar and began drinking it happily.",
+          "hindi": "एक दिन, पहले सिर ने स्वादिष्ट, मीठे अमृत का एक घड़ा खोजा और खुशी-खुशी उसे पीने लगा।"
+        },
+        {
+          "english": "The second head watched longingly and begged, \"Please let me taste a few drops of that nectar as well.\"",
+          "hindi": "दूसरे सिर ने तरसते हुए देखा और भीख मांगी, \"कृपया मुझे भी उस अमृत की कुछ बूंदें चखने दो।\""
+        },
+        {
+          "english": "The first head selfishly refused, saying, \"Why does it matter? It all goes down into our common stomach anyway.\"",
+          "hindi": "पहले सिर ने स्वार्थवश मना कर दिया और कहा, \"इससे क्या फर्क पड़ता है? वैसे भी यह सब हमारे एक ही पेट में जाता है।\""
+        },
+        {
+          "english": "Deeply insulted and furious, the second head began searching the forest floor.",
+          "hindi": "गहरा अपमानित और क्रोधित होकर, दूसरे सिर ने जंगल की जमीन पर खोजना शुरू कर दिया।"
+        },
+        {
+          "english": "It soon discovered a jar of deadly poison and intentionally swallowed it down.",
+          "hindi": "उसे जल्द ही घातक जहर का एक घड़ा मिला और उसने जानबूझकर उसे निगल लिया।"
+        },
+        {
+          "english": "The poison flowed directly into the shared stomach, and both heads perished together.",
+          "hindi": "जहर सीधे साझा पेट में बह गया, और दोनों सिर एक साथ नष्ट हो गए।"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "The Three Fishes",
+      "moral": "Forethought and timely action are better than relying blindly on luck or reacting at the last minute.",
+      "sentences": [
+        {
+          "english": "Three large fishes who were close friends lived in a lake, but they possessed vastly different personalities.",
+          "hindi": "तीन बड़ी मछलियाँ जो घनिष्ठ मित्र थीं, एक झील में रहती थीं, लेकिन उनके व्यक्तित्व बिल्कुल भिन्न थे।"
+        },
+        {
+          "english": "The first fish was a fatalist who believed everything was governed by destiny and couldn't be changed.",
+          "hindi": "पहली मछली भाग्यवादी थी जो मानती थी कि सब कुछ भाग्य द्वारा नियंत्रित होता है और इसे बदला नहीं जा सकता।"
+        },
+        {
+          "english": "The second fish was clever and highly resourceful, confident he could think his way out of any problem.",
+          "hindi": "दूसरी मछली चतुर और अत्यधिक साधन संपन्न थी, उसे विश्वास था कि वह किसी भी समस्या से निकलने का रास्ता सोच सकती है।"
+        },
+        {
+          "english": "The third fish was wise, preferring to think long and hard to avoid danger entirely.",
+          "hindi": "तीसरी मछली बुद्धिमान थी, जो खतरे से पूरी तरह बचने के लिए गहराई से और गंभीरता से सोचने को प्राथमिकता देती थी।"
+        },
+        {
+          "english": "One evening, the wise fish overheard fishermen standing at the shore saying, \"Look at those giant fish! This lake is packed with them. Let's return tomorrow morning with our nets.\"",
+          "hindi": "एक शाम, बुद्धिमान मछली ने किनारे पर खड़े मछुआरों को यह कहते सुना, \"उन विशाल मछलियों को देखो! यह झील उनसे भरी पड़ी है। आइए कल सुबह अपने जालों के साथ वापस आएं।\""
+        },
+        {
+          "english": "The wise fish hurried back to his friends and urged, \"We must swim through the canal immediately and escape to the connected lake before morning.\"",
+          "hindi": "बुद्धिमान मछली तेजी से अपने दोस्तों के पास वापस गई और आग्रह किया, \"हमें तुरंत नहर के माध्यम से तैरना चाहिए और सुबह होने से पहले जुड़ी हुई झील में भाग जाना चाहिए।\""
+        },
+        {
+          "english": "The clever fish scoffed, \"I will stay; if they catch me, I’ll find a trick to escape.\"",
+          "hindi": "चतुर मछली ने उपहास करते हुए कहा, \"मैं यहीं रहूँगा; यदि वे मुझे पकड़ लेंगे, तो मैं बचने की कोई न कोई तरकीब निकाल लूँगा।\""
+        },
+        {
+          "english": "The fatalist fish sighed, \"Whatever is meant to happen will happen. I was born here, and I won't leave.\"",
+          "hindi": "भाग्यवादी मछली ने आह भरते हुए कहा, \"जो होना है वह होकर रहेगा। मैं यहीं पैदा हुआ था, और मैं छोड़कर नहीं जाऊँगा।\""
+        },
+        {
+          "english": "The wise fish didn't want to risk his life and swam through the canal alone that night.",
+          "hindi": "बुद्धिमान मछली अपनी जान जोखिम में नहीं डालना चाहती थी और उस रात वह अकेले ही नहर के रास्ते तैर कर चली गई।"
+        },
+        {
+          "english": "The next morning, the fishermen cast their nets and caught the remaining two friends.",
+          "hindi": "अगली सुबह, मछुआरों ने अपना जाल डाला और शेष दोनों दोस्तों को पकड़ लिया।"
+        },
+        {
+          "english": "The clever fish immediately went completely limp, holding his breath to pretend he was dead.",
+          "hindi": "चतुर मछली तुरंत पूरी तरह से ढीली पड़ गई, और मृत होने का नाटक करने के लिए अपनी सांस रोक ली।"
+        },
+        {
+          "english": "The fishermen carelessly threw him back into the water along with the day's debris, allowing him to escape.",
+          "hindi": "मछुआरों ने लापरवाही से उसे दिन के कचरे के साथ वापस पानी में फेंक दिया, जिससे वह भागने में सफल रहा।"
+        },
+        {
+          "english": "However, the fatalist fish kept thrashing wildly in the net, so the fishermen struck him down.",
+          "hindi": "हालाँकि, भाग्यवादी मछली जाल में बेतहाशा छटपटाती रही, इसलिए मछुआरों ने उसे मार गिराया।"
+        }
+      ]
+    }
+  ]
+}
